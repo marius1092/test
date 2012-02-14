@@ -1,0 +1,31 @@
+{% block filters %}
+    public function filtersAction()
+    {
+        if ($this->get('request')->get('reset')) {
+            $this->setFilters(array());
+
+            return new RedirectResponse($this->generateUrl("{{ builder.routePrefixWithSubfolder }}_{{ bundle_name }}{{ builder.BaseGeneratorName ? "_" ~ builder.BaseGeneratorName : "" }}_list"));
+        }
+
+        $form = $this->getFilterForm();
+        $form->bindRequest($this->get('request'));
+
+        if ($form->isValid()) {
+            $this->setFilters($form->getClientData());
+        }
+
+        return new RedirectResponse($this->generateUrl("{{ builder.routePrefixWithSubfolder }}_{{ bundle_name }}{{ builder.BaseGeneratorName ? "_" ~ builder.BaseGeneratorName : "" }}_list"));
+    }
+    {% block setFilters -%}
+    protected function setFilters($filters)
+    {
+        $this->get('session')->set('{{ namespace_prefix }}\{{ bundle_name }}\{{ builder.BaseGeneratorName }}List\Filters', $filters);
+    }
+    {% endblock %}
+    {% block getFilters -%}
+    protected function getFilters()
+    {
+        return $this->get('session')->get('{{ namespace_prefix }}\{{ bundle_name }}\{{ builder.BaseGeneratorName }}List\Filters', array());
+    }
+    {% endblock %}
+{% endblock %}

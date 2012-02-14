@@ -1,0 +1,54 @@
+cms_page:
+    pattern: /{slug}/
+    defaults: { _controller: MbaCautiousBundle:Page:index }
+    requirements:
+      slug: "[A-Za-z0-9\-]+"
+      
+MbaCautiousBundle:
+    resource: "@MbaCautiousBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+MbaGlobalSettingsBundle_admin_mba_global_settings_bundle_gs:
+    resource: "@MbaGlobalSettingsBundle/Controller/Gs/"
+    type:     admingenerator
+    prefix:   /admin/global_settings
+   
+MbaPageBundle_admin_mba_page_bundle_page:
+    resource: "@MbaPageBundle/Controller/Page/"
+    type:     admingenerator
+    prefix:   /admin/pages
+    
+MbaDashboardBundle:
+    resource: "@MbaDashboardBundle/Controller/"
+    type:     annotation
+    prefix:   /admin/
+    
+_imagine:
+    resource: .
+    type:     imagine    
+    
+#user related routes    
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile    
+
+# Internal routing configuration to handle ESI
+_internal:
+   resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
+   prefix:   /_internal

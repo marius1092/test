@@ -1,0 +1,33 @@
+generator: admingenerator.generator.doctrine
+params:
+  model: Mba\PageBundle\Entity\Page
+  namespace_prefix: Mba
+  bundle_name: PageBundle
+  fields: ~
+
+builders:
+  list:
+    params:
+      title: List for PageBundle
+      display: [title, meta_title, active, include_in_menu, created]
+      actions:
+        new: ~
+      object_actions:
+        edit: ~
+        delete: ~
+  filters:
+    params:
+      display: []
+  new:
+    params:
+      title: New object for PageBundle
+      display: [title, content, active, include_in_menu, meta_title, meta_description, meta_keywords]
+      actions:
+        list: ~
+  edit:
+    params:
+      title: Edit Page
+      display: [title, content, active, include_in_menu, meta_title, meta_description, meta_keywords]
+      actions:
+        list: ~
+  delete: ~

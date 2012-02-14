@@ -1,0 +1,26 @@
+{% form_theme form _self %}
+
+{% block ckeditor_widget %}
+{% spaceless %}
+    <textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
+
+    <script type="text/javascript" src="{{ asset('bundles/trsteelckeditor/ckeditor.js') }}"></script>
+    <script type="text/javascript">//<![CDATA[
+        CKEDITOR.replace("{{ id }}",{
+            {% if width is not null %}
+            width: '{{ width }}',
+            {% endif %}
+            {% if height is not null %}
+            height: '{{ height }}',
+            {% endif %}
+            toolbar: {{ toolbar | json_encode | raw }},
+            {% if ui_colour is not null %}
+                uiColor: "{{ ui_colour }}",
+            {% endif %}
+            {% if startup_outline_blocks == true %}
+            startupOutlineBlocks: {{ startup_outline_blocks }}
+            {% endif %}
+        });
+    //]]></script>
+{% endspaceless %}
+{% endblock %}

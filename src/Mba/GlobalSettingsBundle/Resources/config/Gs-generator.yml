@@ -1,0 +1,33 @@
+generator: admingenerator.generator.doctrine
+params:
+  model: Mba\GlobalSettingsBundle\Entity\GlobalSetting
+  namespace_prefix: Mba
+  bundle_name: GlobalSettingsBundle
+  fields: ~
+
+builders:
+  list:
+    params:
+      title: Global Settings List
+      display: ~
+      actions:
+        new: ~
+      object_actions:
+        edit: ~
+        delete: ~
+  filters: 
+    params:
+      display: []
+  new:
+    params:
+      title: New object for GlobalSettingsBundle
+      display: [title, value ]
+      actions:
+        list: ~
+  edit:
+    params:
+      title: You're editing the object "{{ GlobalSetting.title }}"
+      display: [value]
+      actions:
+        list: ~
+  delete: ~

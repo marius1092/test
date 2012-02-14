@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">  
+        <title>{% block title %}Cautious films{% endblock %}</title>        
+        <meta name="description" content="Cautious films">
+        <meta name="author" content="Cautious films">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">    
+        <script src="/js/libs/modernizr-2.0.6.min.js"></script>
+        {% block stylesheets %}{% endblock %}  
+    </head>
+
+    <body>
+        {% block bg %} <img src="/img/pic-video1.jpg" id="bg" alt=""> {% endblock %}          
+        <div class="nonfooter">
+            <header>
+                <div class="wrapper">
+                    <a href="{{ path('mba_cautious_homepage_homepage') }}" class="logo"><img src="/img/pic-logo.png" alt="Cautious films"></a>
+                </div><!-- wrapper -->
+            </header><!-- header -->
+
+            <div class="container" role="main">
+                <div class="wrapper">
+                    {% block aside %}{% endblock %}  
+                    {% block content %}{% endblock %}                                          
+                                                                
+                    <nav>
+                        {{ knp_menu_render('main') }}
+                    </nav>
+                </div><!-- wrapper -->
+            </div><!-- container -->
+            
+        </div><!-- nonfooter -->
+
+        <footer>
+            {% include 'MbaCautiousBundle::footer.html.twig' with {'globals': globals} %}            
+        </footer><!-- footer -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+        <script defer src="/js/plugins.js"></script>
+        <script defer src="/js/script.js"></script>
+
+        <!-- Change UA-XXXXX-X to be your site's ID -->
+        <script>
+          window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+          Modernizr.load({
+            load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+          });
+            </script>            
+            <!--[if lt IE 7 ]>
+              <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+              <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+            <![endif]-->            
+            <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+            <script type="text/javascript">stLight.options({publisher: "09522bad-d78f-4d77-8deb-f39a5fe43ec8"}); </script>               
+        </body>
+    </html>

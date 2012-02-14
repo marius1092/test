@@ -1,0 +1,106 @@
+/* 
+    Document   : cms
+    Created on : 04-Feb-2012, 19:00:50
+    Author     : Marius
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* Generator styles customization */
+#header #header-left { width: 450px; float: left; }
+#header #header-right { float: right; }
+#header .logo { margin-top: 43px;}
+#header #main_navigation { margin-top: 28px;}
+#header #main_navigation li.current a.main { background: white; color: #334145; }
+.main_content { width: 100%; }
+#header .profile ul li.header-text {
+    color: white;
+    float: left;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 6px 8px 8px;
+    text-decoration: none;
+}
+
+.user_error { 
+    color: #E6324B;
+    font-weight: bold;
+    float: left;
+    font-size: 1.3em;
+    padding: 5px 10px 9px 0;
+}
+
+/* cms forms */
+fieldset.form_block .form_row {width: 800px;}
+fieldset.form_block .form_row .form_field label {
+    color: #464646;
+    float: left;
+    font-size: 1.3em;
+    padding: 5px 10px 9px 0;
+    text-align: left;
+    width: 100px;
+    clear: both;
+}
+fieldset.form_block .form_row .form_field textarea {
+    height: 250px;
+    width: 650px;
+}
+div.form_row div.form_field input { width: 500px;}
+
+
+/* Dashboard slide up boxes styles */
+.slide-up-boxes a { 
+    display: block; 
+    height: 130px; 
+    margin: 0 40px 40px 0; 
+    background: rgba(215, 215, 215, 0.5); 
+    border: 1px solid #ccc;     
+    overflow: hidden; 
+    width: 425px; 
+    float: left;
+    text-decoration: none;
+}
+
+.slide-up-boxes h5 { 
+    color: #333; 
+    text-align: center;
+    height: 65px; 
+    font-size: 1.8em;
+    line-height: 130px;  
+    font-style: italic;
+    opacity: 1;
+    -webkit-transition: all 0.2s linear; 
+    -moz-transition: all 0.2s linear; 
+    -o-transition: all 0.2s linear;
+}
+
+.slide-up-boxes a:hover h5 { 
+    margin-top: -65px; 
+    opacity: 0; 
+}
+
+.slide-up-boxes div { 
+    position: relative; 
+    color: white; 
+    font-size: 1.6em;
+    height: 130px; 
+    padding: 10px; 
+    opacity: 0; 
+    -webkit-transform: rotate(6deg); 
+    -webkit-transition: all 0.4s linear; 
+    -moz-transform: rotate(6deg); 
+    -moz-transition: all 0.4s linear; 
+    -o-transform: rotate(6deg); 
+    -o-transition: all 0.4s linear; 
+}
+
+.slide-up-boxes a:hover div {
+    opacity: 1; 
+    -webkit-transform: rotate(0); 
+    -moz-transform: rotate(0); 
+    -o-transform: rotate(0); 
+}
+
+.slide-up-boxes a:nth-child(1) div { background: #c73b1b url('/images/cms/pages.png') 17px 17px no-repeat; padding-left: 120px; }
+.slide-up-boxes a:nth-child(2) div { background: #367db2 url(images/diw.png) 21px 10px no-repeat; padding-left: 90px; }
+.slide-up-boxes a:nth-child(3) div { background: #393838 url(images/qod.png) 14px 16px no-repeat; padding-left: 133px; }

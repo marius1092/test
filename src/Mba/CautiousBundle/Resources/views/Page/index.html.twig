@@ -1,0 +1,9 @@
+{% extends "MbaCautiousBundle::layout.html.twig" %}
+{% block content %}
+    <section class="content content-wide">
+        {% autoescape true %}
+                {{ page.content }}
+        {% endautoescape %}
+    </section>
+{% endblock %}
+        

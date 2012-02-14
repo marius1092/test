@@ -1,0 +1,47 @@
+
+{% extends "AdmingeneratorGeneratorBundle::base_admin_assetic_less.html.twig" %}
+
+{% block body %}
+    {% block page_title %}
+<head>
+<h1>Dashboard</h1>
+</head>
+    {% endblock %}
+
+<div class="main_content">
+    <section class="slide-up-boxes">
+        
+        <a href="{{ path("Mba_PageBundle_Page_list") }}">
+            <h5>Main Content</h5>
+            <div>Manage content of the website</div>				
+        </a>
+
+        <a href="{{ path("Mba_GlobalSettingsBundle_Gs_list") }}">
+            <h5>Global Settings</h5>
+            <div>Manage important settings of the website</div>				
+        </a>
+        
+        <a href="{{ path("Mba_GlobalSettingsBundle_Gs_list") }}">
+            <h5>Contact Enquires</h5>
+            <div>Manage important settings of the website</div>				
+        </a>
+        
+        <a href="{{ path("Mba_GlobalSettingsBundle_Gs_list") }}">
+            <h5>Newsletter Requests</h5>
+            <div>Manage important settings of the website</div>				
+        </a>        
+        
+        <a href="{{ path("Mba_GlobalSettingsBundle_Gs_list") }}">
+            <h5>Users</h5>
+            <div>Manage important settings of the website</div>				
+        </a>                
+        
+        <a href="{{ path("Mba_GlobalSettingsBundle_Gs_list") }}">
+            <h5>Traffic Statistics</h5>
+            <div>Manage important settings of the website</div>				
+        </a>                
+
+    </section>
+</div> 
+
+{% endblock %}

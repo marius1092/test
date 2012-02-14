@@ -1,0 +1,4 @@
+framework:
+    secret:          'secret'
+    router:          { resource: null }
+    templating:      { engines: ['twig'] }

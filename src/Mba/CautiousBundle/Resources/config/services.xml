@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+    <!--
+    <parameters>
+        <parameter key="mba_cautious.example.class">Mba\CautiousBundle\Example</parameter>
+    </parameters>   
+        <service id="mba_cautious.example" class="%mba_cautious.example.class%">
+            <argument type="service" id="service_id" />
+            <argument>plain_value</argument>
+            <argument>%parameter_name%</argument>
+        </service>    
+    -->
+    
+    <!-- Menu -->
+        <service id="cautious.menu_builder" class="Mba\CautiousBundle\Menu\MainMenuBuilder">            
+            <argument type="service" id="knp_menu.factory" />
+            <argument type="service" id="doctrine.orm.entity_manager" />            
+        </service>
+
+        <service id="cautious.main_menu" class="Mba\CautiousBundle\Menu\MainMenuBuilder"
+             factory-service="cautious.menu_builder"
+             factory-method="createMainMenu"
+             scope="request">
+            <tag name="knp_menu.menu" alias="main" />
+            <argument type="service" id="request" />
+        </service>
+    </services>
+</container>

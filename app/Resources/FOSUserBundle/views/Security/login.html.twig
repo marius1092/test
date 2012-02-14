@@ -1,0 +1,65 @@
+{% extends "AdmingeneratorGeneratorBundle::base_admin_assetic_less.html.twig" %}
+
+{% block body %}
+    {% block page_title %}
+<head>
+<h1>Signin</h1>
+</head>
+    {% endblock %}
+
+    {% block profile %}
+    {% endblock %}
+    {% block menu %}         
+    {% endblock %}
+    {% block javascripts %}
+    {% endblock %}
+    {% block form %}
+<form action="{{ path("fos_user_security_check") }}" method="post">
+
+        {% if error %}
+             <div class="user_error">{{ error }}</div>
+        {% endif %}
+
+        {% block form_fieldset_NONE %}
+    <fieldset class="form_block form_fieldset_NONE">
+
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />               
+
+        <div class="form_row">
+            <div class="form_field">
+                    {% block form_id %}
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="_username" value="{{ last_username }}" />                        
+                    {% endblock %}
+                </div>
+            </div>
+            <div class="form_row">
+                <div class="form_field">
+                    {% block form_username %}
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="_password" />
+                    {% endblock %}
+                    </div>
+                </div>
+                <div class="form_row">
+                    <div class="form_field">
+                    {% block form_remember %}
+                            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                            <label for="remember_me">remember me</label>
+                    {% endblock %}
+                        </div>
+                    </div>        
+
+
+                </fieldset>
+        {% endblock %}
+
+                <ul class="actions">
+                    <li>                 
+                        <input type="submit" class="submit_button" value="Signin" />                
+                    </li>
+                </ul>
+
+            </form>
+    {% endblock %}
+{% endblock %}
