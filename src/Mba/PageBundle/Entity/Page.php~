@@ -47,17 +47,17 @@ class Page
     private $include_in_menu = false; 
     
     /**
-     * @var datetime $created
+     * @var date $created
      *
      * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      */
     private $created;
 
     /**
-     * @var datetime $updated
+     * @var date $updated
      *
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      * @Gedmo\Timestampable(on="update")
      */
     private $updated;    
@@ -158,46 +158,6 @@ class Page
     public function getContent()
     {
         return $this->content;
-    }
-
-    /**
-     * Set created
-     *
-     * @param datetime $created
-     */
-    public function setCreated($created)
-    {
-        $this->created = $created;
-    }
-
-    /**
-     * Get created
-     *
-     * @return datetime 
-     */
-    public function getCreated()
-    {
-        return $this->created;
-    }
-
-    /**
-     * Set updated
-     *
-     * @param datetime $updated
-     */
-    public function setUpdated($updated)
-    {
-        $this->updated = $updated;
-    }
-
-    /**
-     * Get updated
-     *
-     * @return datetime 
-     */
-    public function getUpdated()
-    {
-        return $this->updated;
     }
 
     /**

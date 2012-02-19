@@ -1,5 +1,5 @@
 /* 
- * HTML5 ✰ Boilerplate
+ * HTML5 âœ° Boilerplate
  *
  * What follows is the result of much research on cross-browser styling. 
  * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
@@ -255,14 +255,14 @@ nav .current a:visited { color: #c8a11c; }
 .bgheight { height: 100%; }
 
 /* footer */
-footer { width: 100%; background: url(../img/bgr-footer.png) repeat-x; position: relative; margin: -72px 0 0; overflow: hidden; height: 72px; }
+footer { width: 100%; background: url(/img/bgr-footer.png) repeat-x; position: relative; margin: -72px 0 0; overflow: hidden; height: 72px; }
 footer .wrapper { overflow: hidden; padding: 17px 0 0; }
 
 /* social */
 .social { float: left; margin: 4px 0 0; }
 .social li { display: block; float: left; }
 .social a,
-.social a:visited { display: block; float: left; text-indent: -9999em; background-image: url(../img/bgr-social.png); background-repeat: no-repeat; height: 21px; }
+.social a:visited { display: block; float: left; text-indent: -9999em; background-image: url(/img/bgr-social.png); background-repeat: no-repeat; height: 21px; }
 .social a:focus { outline: none; }
 .social .fb,
 .social .fb:visited { width: 22px; background-position: 0 0; }
@@ -277,8 +277,8 @@ footer .wrapper { overflow: hidden; padding: 17px 0 0; }
 /* newsletter */
 .newsletter { float: left; width: 221px; margin: 0 121px 0 61px; }
 .newsletter input[type="email"],
-.newsletter input[type="text"] { float: left; background: url(../img/bgr-newsletter.png) no-repeat; width: 160px; height: 28px; line-height: 28px; vertical-align: middle; padding: 0 12px; display: block; color: #232124; font-size: 12px; border: 0; outline: none;  box-shadow: none; font-family: 'QuattrocentoSansRegular'; }
-.newsletter input[type="submit"] { float: left; background: url(../img/bgr-submit.png) no-repeat; width: 37px; height: 28px; display: block; cursor: pointer; border: 0; }
+.newsletter input[type="text"] { float: left; background: url(/img/bgr-newsletter.png) no-repeat; width: 160px; height: 28px; line-height: 28px; vertical-align: middle; padding: 0 12px; display: block; color: #232124; font-size: 12px; border: 0; outline: none;  box-shadow: none; font-family: 'QuattrocentoSansRegular'; }
+.newsletter input[type="submit"] { float: left; background: url(/img/bgr-submit.png) no-repeat; width: 37px; height: 28px; display: block; cursor: pointer; border: 0; }
 .newsletter input[type="submit"]:focus { outline: none; }
 
 /* copyright */
@@ -287,13 +287,13 @@ footer .wrapper { overflow: hidden; padding: 17px 0 0; }
 /* music */
 .music { float: left; width: 44px; margin: 7px 31px 0 41px; }
 .music .on,
-.music .on:visited { float: left; background: url(../img/bgr-sound.png) no-repeat; width: 11px; height: 12px; display: block; text-indent: -9999em; font-size: 0; }
+.music .on:visited { float: left; background: url(/img/bgr-sound.png) no-repeat; width: 11px; height: 12px; display: block; text-indent: -9999em; font-size: 0; }
 .music .action,
 .music .action:visited { float: left; width: 9px; height: 12px; display: block; text-indent: -9999em; font-size: 0; margin: 0 0 0 24px; }
-.music .play { background: url(../img/bgr-play.png) no-repeat; }
+.music .play { background: url(/img/bgr-play.png) no-repeat; }
 
 /* facebook */
-.facebook { float: right; background: url(../img/bgr-facebook.png) no-repeat; width: 90px; height: 20px; display: block; text-indent: -9999em; font-size: 0; float: right; margin: 1px 2px 0 0; }
+.facebook { float: right; background: url(/img/bgr-facebook.png) no-repeat; width: 90px; height: 20px; display: block; text-indent: -9999em; font-size: 0; float: right; margin: 1px 2px 0 0; }
 
 /* left-side */
 .left-side { float: left; width: 214px; }

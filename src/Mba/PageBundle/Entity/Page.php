@@ -47,17 +47,17 @@ class Page
     private $include_in_menu = false; 
     
     /**
-     * @var datetime $created
+     * @var date $created
      *
      * @Gedmo\Timestampable(on="create")
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      */
     private $created;
 
     /**
-     * @var datetime $updated
+     * @var date $updated
      *
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="date")
      * @Gedmo\Timestampable(on="update")
      */
     private $updated;    
@@ -161,46 +161,6 @@ class Page
     }
 
     /**
-     * Set created
-     *
-     * @param datetime $created
-     */
-    public function setCreated($created)
-    {
-        $this->created = $created;
-    }
-
-    /**
-     * Get created
-     *
-     * @return datetime 
-     */
-    public function getCreated()
-    {
-        return $this->created;
-    }
-
-    /**
-     * Set updated
-     *
-     * @param datetime $updated
-     */
-    public function setUpdated($updated)
-    {
-        $this->updated = $updated;
-    }
-
-    /**
-     * Get updated
-     *
-     * @return datetime 
-     */
-    public function getUpdated()
-    {
-        return $this->updated;
-    }
-
-    /**
      * Set include_in_menu
      *
      * @param boolean $includeInMenu
@@ -298,5 +258,45 @@ class Page
     public function getMetaKeywords()
     {
         return $this->meta_keywords;
+    }
+
+    /**
+     * Set created
+     *
+     * @param date $created
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+    }
+
+    /**
+     * Get created
+     *
+     * @return date 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param date $updated
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return date 
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
     }
 }

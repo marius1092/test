@@ -53,9 +53,9 @@ class Promo {
     private $client;
 
     /**
-     * @var datetime $promo_date
+     * @var date $promo_date
      *
-     * @ORM\Column(name="promo_date", type="datetime")
+     * @ORM\Column(name="promo_date", type="date")
      */
     private $promo_date;
 
@@ -195,24 +195,6 @@ class Promo {
      */
     public function getClient() {
         return $this->client;
-    }
-
-    /**
-     * Set promo_date
-     *
-     * @param datetime $promoDate
-     */
-    public function setPromoDate($promoDate) {
-        $this->promo_date = $promoDate;
-    }
-
-    /**
-     * Get promo_date
-     *
-     * @return datetime 
-     */
-    public function getPromoDate() {
-        return $this->promo_date;
     }
 
     /**

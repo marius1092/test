@@ -53,9 +53,9 @@ class Promo {
     private $client;
 
     /**
-     * @var datetime $promo_date
+     * @var date $promo_date
      *
-     * @ORM\Column(name="promo_date", type="datetime")
+     * @ORM\Column(name="promo_date", type="date")
      */
     private $promo_date;
 
@@ -198,24 +198,6 @@ class Promo {
     }
 
     /**
-     * Set promo_date
-     *
-     * @param datetime $promoDate
-     */
-    public function setPromoDate($promoDate) {
-        $this->promo_date = $promoDate;
-    }
-
-    /**
-     * Get promo_date
-     *
-     * @return datetime 
-     */
-    public function getPromoDate() {
-        return $this->promo_date;
-    }
-
-    /**
      * Set description
      *
      * @param text $description
@@ -340,5 +322,25 @@ class Promo {
     public function getImageOverName()
     {
         return $this->image_over_name;
+    }
+
+    /**
+     * Set promo_date
+     *
+     * @param date $promoDate
+     */
+    public function setPromoDate($promoDate)
+    {
+        $this->promo_date = $promoDate;
+    }
+
+    /**
+     * Get promo_date
+     *
+     * @return date 
+     */
+    public function getPromoDate()
+    {
+        return $this->promo_date;
     }
 }

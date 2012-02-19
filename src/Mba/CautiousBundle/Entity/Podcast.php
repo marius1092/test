@@ -43,9 +43,9 @@ class Podcast
     private $subtitle;
 
     /**
-     * @var datetime $podcast_date
+     * @var date $podcast_date
      *
-     * @ORM\Column(name="podcast_date", type="datetime")
+     * @ORM\Column(name="podcast_date", type="date")
      */
     private $podcast_date;
 
