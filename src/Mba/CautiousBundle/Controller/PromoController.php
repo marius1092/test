@@ -18,8 +18,7 @@ class PromoController extends Controller
      * @Template("MbaCautiousBundle:Promo:index.html.twig")
      */        
     public function indexAction($slug = '')    
-    {        
-        phpinfo(); die;
+    {                
         $globals = $this->get('mba_global_settings')->getGlobalValues();        
         $page = $this->get('mba_page.details')->getPageDetails('promo-work');                                        
         if (!$page) {
