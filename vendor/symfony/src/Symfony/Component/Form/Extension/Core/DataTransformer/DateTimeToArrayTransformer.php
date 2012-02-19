@@ -158,7 +158,7 @@ class DateTimeToArrayTransformer extends BaseDateTimeTransformer
             throw new TransformationFailedException('This is an invalid date');
         }
 
-        try {
+        try {            
             $dateTime = new \DateTime(sprintf(
                 '%s-%s-%s %s:%s:%s %s',
                 empty($value['year']) ? '1970' : $value['year'],
@@ -167,11 +167,11 @@ class DateTimeToArrayTransformer extends BaseDateTimeTransformer
                 empty($value['hour']) ? '0' : $value['hour'],
                 empty($value['minute']) ? '0' : $value['minute'],
                 empty($value['second']) ? '0' : $value['second'],
-                $this->outputTimezone
+                'Europe/London'
             ));
 
             if ($this->inputTimezone !== $this->outputTimezone) {
-                $dateTime->setTimezone(new \DateTimeZone($this->inputTimezone));
+                $dateTime->setTimezone(new \DateTimeZone('Europe/London'));
             }
         } catch (\Exception $e) {
             throw new TransformationFailedException($e->getMessage(), $e->getCode(), $e);
