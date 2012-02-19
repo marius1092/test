@@ -1,0 +1,33 @@
+generator: admingenerator.generator.doctrine
+params:
+  model: Mba\CautiousBundle\Entity\Podcast
+  namespace_prefix: Mba
+  bundle_name: CautiousAdminBundle
+  fields: ~
+
+builders:
+  list:
+    params:
+      title: Podcast
+      display: [title, subtitle, podcast_date, audio_url, active]
+      actions:
+        new: ~
+      object_actions:
+        edit: ~
+        delete: ~
+  filters:
+    params:
+      display: []
+  new:
+    params:
+      title: New Podcast Entry      
+      display: [title, subtitle, podcast_date, description, audio_url, active]
+      actions:
+        list: ~
+  edit:
+    params:
+      title: Edit Podcast - "{{ Podcast.title }}"
+      display: [title, subtitle, podcast_date, description, audio_url, active]
+      actions:
+        list: ~
+  delete: ~

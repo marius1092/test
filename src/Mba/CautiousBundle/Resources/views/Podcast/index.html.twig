@@ -1,0 +1,49 @@
+{% extends "MbaCautiousBundle::layout.html.twig" %}
+
+{% block aside %}
+<aside class="left-side">
+    <div class="archive">
+        <h2>ARCHIVE</h2>
+        <ul>
+            {% for entry in archive %}
+                <li><a href="{{ path('mba_cautious_podcast_index_1', { 'date': entry['aldates'] } )}}" title="{{ entry['adates'] }}">{{ entry['adates'] }}</a></li>
+            {% endfor %}                                          
+            </ul>
+        </div><!-- archive -->
+    </aside><!-- left-side -->
+{% endblock %}  
+
+{% block content %}
+    <section class="content">
+        {% for podcast in podcasts %}
+            {% if loop.index == 1 %}
+                <div class="podcast">
+                    <aside class="meta">
+                        <h2>{{ podcast.title }}</h2>
+                        {% if podcast.subtitle %}<h3>{{ podcast.subtitle }}</h3>{% endif %}
+                        <div class="date"><em>DATE:</em> {{ podcast['podcast_date'] | date("F Y") }}</div>
+                    </aside><!-- meta -->
+                    <p>{{ podcast.description }}</p>
+                    <figure>
+                        <a href="#"><img src="/img/pic-playbar.jpg" alt=""></a>
+                    </figure>
+                </div><!-- podcast -->                 
+                {% endif %}
+        {% endfor%}
+        
+        <div class="podcasts">
+        {% for podcast in podcasts %}
+            {% if loop.index != 1 %}
+                <div class="item">
+                    <h4>{{ podcast.title }}</h4>
+                    {% if podcast.subtitle %}<h5>{{ podcast.subtitle }}</h5>{% endif %}
+                    <div class="date"><em>DATE:</em> {{ podcast['podcast_date'] | date("F Y") }}</div>
+                    <a href="#" class="play"><img src="/img/pic-playbar.jpg" alt=""></a>
+                </div><!-- item -->                
+            {%endif%} 
+        {% endfor%}
+        </div>
+                            
+    </section><!-- content -->
+{% endblock %} 
+

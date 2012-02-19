@@ -1,0 +1,33 @@
+generator: admingenerator.generator.doctrine
+params:
+  model: Mba\CautiousBundle\Entity\Promo
+  namespace_prefix: Mba
+  bundle_name: CautiousAdminBundle
+  fields: ~
+
+builders:
+  list:
+    params:
+      title: Promo work
+      display: [title, director, client, video_url,  promo_date, active]
+      actions:
+        new: ~
+      object_actions:
+        edit: ~
+        delete: ~
+  filters:
+    params:
+      display: []
+  new:
+    params:
+      title: New Promo Entry
+      display: [title, director, client, promo_date, description, video_url, active]
+      actions:
+        list: ~
+  edit:
+    params:
+      title: Edit Promo Entry - "{{ Promo.title }}"
+      display: [title, director, client, promo_date, description, video_url, active]
+      actions:
+        list: ~
+  delete: ~

@@ -1,0 +1,46 @@
+{% extends "MbaCautiousBundle::layout.html.twig" %}
+
+{% block aside %}
+<aside class="left-side">
+    <div class="promos">
+        <ul>
+            {% for promo in promos %}
+                <li><a href="{{ path('mba_cautious_promo_index_1', { 'slug': promo.slug } )}}" title="{{promo.title}}">                        
+                        <img src="{{ vich_uploader_asset(promo, 'image') | apply_filter('promo_thumb') }}" alt="{{ promo.title }}" class="on" />                                            
+                        <span>
+                            {% if promo.imageOverName %}                            
+                                <img src="{{ vich_uploader_asset(promo, 'imageOver') | apply_filter('promo_thumb') }}" alt="{{ promo.title }}" />                            
+                            {% else %}
+                                <img src="{{ vich_uploader_asset(promo, 'image') | apply_filter('promo_thumb') }}" alt="{{ promo.title }}" />
+                            {% endif %}                          
+                        </span>
+                    </a>
+                 </li>
+            {% endfor %}                            
+        </ul>
+        <div class="nav">
+            {# <a href="#" class="prev">&#171; prev</a>
+            <a href="#" class="next on">next &#187;</a>  #}
+        </div><!-- nav -->
+    </div><!-- promos -->
+</aside><!-- left-side -->
+{% endblock %}  
+
+{% block content %}
+<section class="content">
+    <div class="promo">
+        <figure>
+            <a href="#"><img src="/img/pic-video.jpg" alt=""></a>
+        </figure>
+        <aside class="meta">
+            <h2>{{ promo.title }}</h2>
+            <div class="details">
+                {% if promo.director %}<em>DIRECTOR:</em> {{ promo.director }}<br>{% endif %}
+                {% if promo.client %} <em>CLIENT:</em> {{ promo.client }}<br>{% endif %}
+                <em>DATE:</em> {{ promo.promoDate | date("F Y") }} </div><!-- details -->
+            <p>{{ promo.description}}</p>
+        </aside><!-- meta -->
+    </div><!-- promo -->
+</section><!-- content -->
+{% endblock %} 
+
