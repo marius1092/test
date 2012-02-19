@@ -29,11 +29,14 @@ class AppKernel extends Kernel
             new Oryzone\Bundle\BoilerplateBundle\OryzoneBoilerplateBundle(),    
             new Gregwar\ImageBundle\GregwarImageBundle(),
             new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
+            //my own bundles
             new Mba\UserBundle\MbaUserBundle(),
             new Mba\PageBundle\MbaPageBundle(),
             new Mba\DashboardBundle\MbaDashboardBundle(),
             new Mba\GlobalSettingsBundle\MbaGlobalSettingsBundle(),
             new Mba\CautiousBundle\MbaCautiousBundle(),
+            new Mba\CautiousAdminBundle\MbaCautiousAdminBundle(),
+            new Vich\UploaderBundle\VichUploaderBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -17,7 +17,7 @@ class PageController extends Controller
         $page = $this->get('mba_page.details')->getPageDetails($slug);                                        
         if (!$page) {
             throw $this->createNotFoundException('The page does not exist');
-        }
+        }             
         return array('globals' => $globals, 'page' => $page);
     }
 }

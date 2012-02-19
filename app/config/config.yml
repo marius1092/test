@@ -103,12 +103,24 @@ trsteel_ckeditor:
     ui_colour: '#000000'
     startup_outline_blocks: true
     width: 800 #Integer or %
-    height: 300 #Integer or %
+    height: 300 #Integer or %       
     
 avalanche_imagine:
-    filters:
-        my_thumb:
+    web_root:     %kernel.root_dir%/../web
+    cache_prefix: media/cache
+    driver:       gd
+    filters:  
+        promo_thumb:
             type:    thumbnail
-            options: { size: [120, 90], mode: outbound }    
-            
+            options: { size: [210, 110], mode: outbound }                
         
+vich_uploader:
+    db_driver: orm # or mongodb
+    web_dir_name: web
+    twig: true
+    mappings:
+        promoImage:
+            upload_dir: %kernel.root_dir%/../web/uploads/images/promo                  
+            namer: ~ # specify a namer service id for this entity, null default
+            delete_on_remove: false # determines whether to delete file upon removal of entity
+            inject_on_load: true # determines whether to inject a File instance upon load

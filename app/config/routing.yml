@@ -1,14 +1,27 @@
-cms_page:
-    pattern: /{slug}/
-    defaults: { _controller: MbaCautiousBundle:Page:index }
-    requirements:
-      slug: "[A-Za-z0-9\-]+"
-      
+_imagine:
+    resource: .
+    type:     imagine   
+    
+MbaCautiousAdminBundle_admin_mba_cautious_admin_bundle_promo:
+    resource: "@MbaCautiousAdminBundle/Controller/Promo/"
+    type:     admingenerator
+    prefix:   /admin/promo
+    
+MbaCautiousAdminBundle_admin_mba_cautious_admin_bundle_podcast:
+    resource: "@MbaCautiousAdminBundle/Controller/Podcast/"
+    type:     admingenerator
+    prefix:   /admin/podcast
+
 MbaCautiousBundle:
     resource: "@MbaCautiousBundle/Controller/"
     type:     annotation
     prefix:   /
-
+    
+MbaPageBundle_admin_mba_page_bundle_page:
+    resource: "@MbaPageBundle/Controller/Page/"
+    type:     admingenerator
+    prefix:   /admin/pages
+    
 MbaGlobalSettingsBundle_admin_mba_global_settings_bundle_gs:
     resource: "@MbaGlobalSettingsBundle/Controller/Gs/"
     type:     admingenerator
@@ -22,11 +35,7 @@ MbaPageBundle_admin_mba_page_bundle_page:
 MbaDashboardBundle:
     resource: "@MbaDashboardBundle/Controller/"
     type:     annotation
-    prefix:   /admin/
-    
-_imagine:
-    resource: .
-    type:     imagine    
+    prefix:   /    
     
 #user related routes    
 fos_user_security:
@@ -47,6 +56,12 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile    
+
+cms_page:
+    pattern: /{slug}/
+    defaults: { _controller: MbaCautiousBundle:Page:index }
+    requirements:
+      slug: "[A-Za-z0-9\-]+"
 
 # Internal routing configuration to handle ESI
 _internal:

@@ -31,6 +31,7 @@ $loader->registerNamespaces(array(
     'Oryzone'          => __DIR__.'/../vendor/bundles',    
     'Imagine'          => __DIR__.'/../vendor/imagine/lib',
     'Avalanche'        => __DIR__.'/../vendor/bundles',    
+    'Vich'             => __DIR__.'/../vendor/bundles'
 ));
 $loader->registerPrefixes(array(
     'Twig_Extensions_' => __DIR__.'/../vendor/twig-extensions/lib',
