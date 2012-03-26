@@ -1,0 +1,33 @@
+generator: admingenerator.generator.doctrine
+params:
+  model: Mba\BlogBundle\Entity\Blog
+  namespace_prefix: Mba
+  bundle_name: BlogBundle
+  fields: ~
+
+builders:
+  list:
+    params:
+      title: News
+      display: [title, subtitle, entry_date, active ]
+      actions:
+        new: ~
+      object_actions:
+        edit: ~
+        delete: ~
+  filters:
+    params:
+      display: []
+  new:
+    params:
+      title: New News Entry
+      display: [title, subtitle, entry_date, content, active, meta_title, meta_description, meta_keywords]
+      actions:
+        list: ~
+  edit:
+    params:
+      title: Edit - "{{ Blog.title }}"
+      display: [title, subtitle, entry_date, content, active, meta_title, meta_description, meta_keywords]
+      actions:
+        list: ~
+  delete: ~

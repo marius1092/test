@@ -1,0 +1,49 @@
+{% extends "MbaCautiousBundle::layout_new.html.twig" %}
+{% block aside %}
+<aside class="left-side">
+    <div class="archive">
+        <h2>ARCHIVE</h2>
+            <ul>
+                {% for entry in news_archive %}
+                    <li class="{% if selected_date == entry['aldates'] %}current{% endif %}"><a href="{{ path('mba_cautious_blog_index_1', { 'date': entry['aldates'] } )}}" title="{{ entry['adates'] }}">{{ entry['adates'] }}</a></li>
+                {% endfor %}                                          
+            </ul>
+        </div><!-- archive -->
+    </aside><!-- left-side -->
+{% endblock %}  
+
+{% block content %}
+
+    <section class="content">
+        {% for post in news %}
+            {% if loop.index == 1 %}
+            <div class="podcast">
+                <aside class="meta">                    
+                    <h2><a href="{{ path('mba_cautious_blog_details', { 'date': selected_date, 'slug': post['slug'] } )}}" title="{{ post['title'] }}">{{ post.title | upper}}</a></h2>
+                    {% if post.subtitle %}<h3>{{ post.subtitle | upper}}</h3>{% endif %}                    
+                    <div class="date"><em>DATE:</em> {{ post['entry_date'] | date("F Y") }}</div>
+                </aside><!-- meta -->
+                {{ post.content | raw }}
+            </div>                        
+            {% endif %}
+        {% endfor%}
+
+            <div class="podcasts">
+        {% for post in news %}
+            {% if loop.index != 1 %}
+                    <div class="item">
+                        <h4><a href="{{ path('mba_cautious_blog_details', { 'date': selected_date, 'slug': post['slug'] } )}}" title="{{ post['title'] }}">{{ post.title | upper}}</a></h4>
+                        {% if post.subtitle %}<h5>{{ post.subtitle | upper }}</h5>{% endif %}
+                        <div class="date"><em>DATE:</em> {{ post['entry_date'] | date("F Y") }}</div>                        
+                        {# {% autoescape false %}{{ post.content }}{% endautoescape %} #}
+                    </div><!-- item -->                
+            {%endif%} 
+        {% endfor%}
+                </div>
+
+            </section><!-- content -->
+{% endblock %}     
+
+{% block welcome %} 
+            <section id="welcome">    </section>                                 
+{% endblock %} 
