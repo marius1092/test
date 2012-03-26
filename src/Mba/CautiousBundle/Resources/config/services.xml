@@ -29,5 +29,6 @@
             <tag name="knp_menu.menu" alias="main" />
             <argument type="service" id="request" />
         </service>
+
     </services>
 </container>

@@ -13,7 +13,7 @@ class HomepageController extends Controller
      * @Template("MbaCautiousBundle:Homepage:index.html.twig")
      */
     public function homepageAction()
-    {                        
+    {                     
         $globals = $this->get('mba_global_settings')->getGlobalValues();        
         $page = $this->get('mba_page.details')->getPageDetails('home');                                        
         if (!$page) {

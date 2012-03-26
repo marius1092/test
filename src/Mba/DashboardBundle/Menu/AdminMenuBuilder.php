@@ -28,6 +28,9 @@ class AdminMenuBuilder extends ContainerAware
         $menu_entry = $menu->addChild('Pages', array('route' => 'Mba_PageBundle_Page_list'));
         $menu_entry->setLinkAttributes(array('class'=>'sub main'));
         
+        $menu_entry = $menu->addChild('News', array('route' => 'Mba_BlogBundle_Blog_list'));
+        $menu_entry->setLinkAttributes(array('class'=>'sub main'));                
+        
         $menu_entry = $menu->addChild('Promo Work', array('route' => 'Mba_CautiousAdminBundle_Promo_list'));
         $menu_entry->setLinkAttributes(array('class'=>'sub main'));
         

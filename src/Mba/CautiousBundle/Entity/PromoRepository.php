@@ -20,8 +20,8 @@ class PromoRepository extends EntityRepository
                 p.active = ?1
             ORDER by p.promo_date DESC');
         $query->setParameter(1, true);        
-        $r = $query->getResult();
-        return $r ? $r : false;                
+        
+        return $query;
     }
     
     public function getLatestPromo()

@@ -11,12 +11,12 @@
         <meta name="author" content="Cautious films">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <link rel="stylesheet" href="/css/style.css">    
+        <link rel="stylesheet" href="/css/video-js.css">            
         <script src="/js/libs/modernizr-2.0.6.min.js"></script>
         {% block stylesheets %}{% endblock %}  
     </head>
 
-    <body>
-        {% block bg %} <img src="/img/pic-video1.jpg" id="bg" alt=""> {% endblock %}          
+    <body>        
         <div class="nonfooter">
             <header>
                 <div class="wrapper">
@@ -32,9 +32,18 @@
                     <nav>
                         {{ knp_menu_render('main') }}
                     </nav>
+                        <section id="welcome">
+        					<h2>Welcome to Cautious Films</h2>
+        					<h3>writer / director Dennis Shinners</h3>
+        		</section>                         
                 </div><!-- wrapper -->
             </div><!-- container -->
-            
+            <div id="bg_grid"></div>
+            <video id="index_video" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="100%" poster="video/stills/tunnel.jpg" data-setup='{ "controls": false, "autoplay": true, "preload": "auto", "loop": true }'>
+                <source src="video/city.mp4" type='video/mp4'>
+                <source src="video/city.webm" type='video/webm'>
+                <source src="video/city.ogv" type='video/ogg'>
+            </video>    
         </div><!-- nonfooter -->
 
         <footer>

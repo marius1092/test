@@ -30,7 +30,7 @@ class MainMenuBuilder
     {
         $menu = $this->factory->createItem('root');
         $menu->setCurrentUri($request->getRequestUri());
-                                
+                                                       
         $menu_entry = $menu->addChild('home', array('route' => 'mba_cautious_homepage_homepage'));                               
         
         $pages = $this->em->getRepository('MbaPageBundle:Page')->getMenuPages();
@@ -39,7 +39,17 @@ class MainMenuBuilder
                 $menu_entry = $menu->addChild($page->getTitle(), array('route' => 'cms_page', 'routeParameters' => array('slug' => $page->getSlug())));
                 $menu_entry->setLinkAttributes(array('class'=>'sub main'));        
             }
-        }                        
+        }              
+        
+        //echo $request->get('_route'); die;
+        switch($request->get('_route')) {
+            case "mba_cautious_blog_index":
+            case "mba_cautious_blog_index_1":
+            case "mba_cautious_blog_details":            
+                $menu['news']->setCurrent(true);
+                break;
+        }
+        
         return $menu;
     }
 }

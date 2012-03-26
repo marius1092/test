@@ -1,3 +1,13 @@
+MbaBlogBundle_admin:
+    resource: "@MbaBlogBundle/Controller/Blog/"
+    type:     admingenerator
+    prefix:   /admin/blog
+
+MbaBlogBundle:
+    resource: "@MbaBlogBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 _imagine:
     resource: .
     type:     imagine   

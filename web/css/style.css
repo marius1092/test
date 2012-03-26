@@ -1,34 +1,9 @@
-/* 
- * HTML5 âœ° Boilerplate
- *
- * What follows is the result of much research on cross-browser styling. 
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- *
- * Detailed information about this CSS: h5bp.com/css
- * 
- * ==|== normalize ==========================================================
- */
-
-
-/* =============================================================================
-   HTML5 display definitions
-   ========================================================================== */
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
 audio:not([controls]) { display: none; }
 [hidden] { display: none; }
 
-/* =============================================================================
-   Base
-   ========================================================================== */
-
-/*
- * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
- * 2. Force vertical scrollbar in non-IE
- * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
- */
 
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
@@ -36,206 +11,97 @@ body { margin: 0; font-size: 13px; line-height: 1.231; }
 
 body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
-/* 
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection declarations have to be separate
- * Also: hot pink! (or customize the background color to match your design)
- */
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #c8a11c; color: #fff; text-shadow: none; }
+::selection { background: #c8a11c; color: #fff; text-shadow: none; }
 
 
 /* =============================================================================
    Links
    ========================================================================== */
 
-a { color: #00e; }
-a:visited { color: #551a8b; }
-a:hover { color: #06e; }
-a:focus { outline: thin dotted; }
+a { color: #fff; }
+a:visited { color: #fff; }
+a:hover { color: #c8a11c; }
+a:focus { outline: none; }
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
 a:hover, a:active { outline: 0; }
-
-
-/* =============================================================================
-   Typography
-   ========================================================================== */
-
 abbr[title] { border-bottom: 1px dotted; }
-
 b, strong { font-weight: bold; }
-
 blockquote { margin: 1em 40px; }
-
 dfn { font-style: italic; }
-
 hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
-
 ins { background: #ff9; color: #000; text-decoration: none; }
-
 mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
-
-/* Redeclare monospace font family: h5bp.com/j */
 pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
-
-/* Improve readability of pre-formatted text in all browsers */
 pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
-
 q { quotes: none; }
 q:before, q:after { content: ""; content: none; }
-
 small { font-size: 85%; }
-
-/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
 sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
 sup { top: -0.5em; }
 sub { bottom: -0.25em; }
-
-
-/* =============================================================================
-   Lists
-   ========================================================================== */
-
 ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
-
-
-/* =============================================================================
-   Embedded content
-   ========================================================================== */
-
-/*
- * 1. Improve image quality when scaled in IE7: h5bp.com/d
- * 2. Remove the gap between images and borders on image containers: h5bp.com/e 
- */
-
 img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
-
-/*
- * Correct overflow not hidden in IE9 
- */
-
 svg:not(:root) { overflow: hidden; }
-
-
-/* =============================================================================
-   Figures
-   ========================================================================== */
-
 figure { margin: 0; }
-
-
-/* =============================================================================
-   Forms
-   ========================================================================== */
-
 form { margin: 0; }
 fieldset { border: 0; margin: 0; padding: 0; }
-
-/* Indicate that 'label' will shift focus to the associated form element */
 label { cursor: pointer; }
-
-/* 
- * 1. Correct color not inheriting in IE6/7/8/9 
- * 2. Correct alignment displayed oddly in IE6/7 
- */
-
 legend { border: 0; *margin-left: -7px; padding: 0; }
-
-/*
- * 1. Correct font-size not inheriting in all browsers
- * 2. Remove margins in FF3/4 S5 Chrome
- * 3. Define consistent vertical alignment display in all browsers
- */
-
 button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
-
-/*
- * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)
- * 2. Correct inner spacing displayed oddly in IE6/7
- */
-
 button, input { line-height: normal; *overflow: visible; }
-
-/*
- * Reintroduce inner spacing in 'table' to avoid overlap and whitespace issues in IE6/7
- */
-
 table button, table input { *overflow: auto; }
-
-/*
- * 1. Display hand cursor for clickable form elements
- * 2. Allow styling of clickable form elements in iOS
- */
-
 button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
-
-/*
- * Consistent box sizing and appearance
- */
-
 input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
 input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
 input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
-
-/* 
- * Remove inner padding and border in FF3/4: h5bp.com/l 
- */
-
 button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
-
-/* 
- * 1. Remove default vertical scrollbar in IE6/7/8/9 
- * 2. Allow only vertical resizing
- */
-
 textarea { overflow: auto; vertical-align: top; resize: vertical; }
-
-/* Colors for form validity */
 input:valid, textarea:valid {  }
-input:invalid, textarea:invalid { background-color: #f0dddd; }
-
-
-/* =============================================================================
-   Tables
-   ========================================================================== */
-
+input:invalid, textarea:invalid {  }
 table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
 
 /* ==|== primary styles =====================================================
-   Author: 
+
    ========================================================================== */
 
-@font-face { font-family: 'QuattrocentoSansRegular'; src: url('../fonts/quattrocentosans-regular-webfont.eot'); src: url('../fonts/quattrocentosans-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/quattrocentosans-regular-webfont.woff') format('woff'), url('../fonts/quattrocentosans-regular-webfont.ttf') format('truetype'), url('../fonts/quattrocentosans-regular-webfont.svg#QuattrocentoSansRegular') format('svg'); font-weight: normal; font-style: normal; font-variant: normal; }
+@font-face { font-family: 'QuattrocentoSansRegular', sans-serif; src: url('../fonts/quattrocentosans-regular-webfont.eot'); src: url('../fonts/quattrocentosans-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/quattrocentosans-regular-webfont.woff') format('woff'), url('../fonts/quattrocentosans-regular-webfont.ttf') format('truetype'), url('../fonts/quattrocentosans-regular-webfont.svg#QuattrocentoSansRegular') format('svg'); font-weight: normal; font-style: normal; font-variant: normal; }
 
-@font-face { font-family: 'JosefinSlabBold'; src: url('../fonts/josefinslab-bold-webfont.eot'); src: url('../fonts/josefinslab-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/josefinslab-bold-webfont.woff') format('woff'), url('../fonts/josefinslab-bold-webfont.ttf') format('truetype'), url('../fonts/josefinslab-bold-webfont.svg#JosefinSlabBold') format('svg'); font-weight: normal; font-style: normal; font-variant: normal; }
 
-@font-face { font-family: 'MyriadPro'; src: url('../fonts/myriadpro-regular-webfont.eot'); src: url('../fonts/myriadpro-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/myriadpro-regular-webfont.woff') format('woff'), url('../fonts/myriadpro-regular-webfont.ttf') format('truetype'), url('../fonts/myriadpro-regular-webfont.svg#MyriadPro') format('svg'); font-weight: normal; font-style: normal; font-variant: normal; }
 
-@font-face { font-family: 'SegoeRegular'; src: url('../fonts/segoe-webfont.eot'); src: url('../fonts/segoe-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/segoe-webfont.woff') format('woff'), url('../fonts/segoe-webfont.ttf') format('truetype'), url('../fonts/segoe-webfont.svg#SegoeRegular') format('svg'); font-weight: normal; font-style: normal; }
 
 input:invalid,
 input:-moz-ui-invalid { border: 0; outline: none; box-shadow: none; -moz-box-shadow: none; -webkit-box-shadow: none; background-color: #fff; }
 
 /* Containers */
-html { height: 100%; }
+html { height: 100%; -webkit-font-smoothing: antialiased;}
 body { background-color: #000; color: #fff; height: 100%; }
 .wrapper { margin: 0 auto; width: 1216px; }
-.nonfooter { position: relative; min-height: 100%; }
+.nonfooter { position: relative; min-height: 100%; overflow: hidden;
+}
 
 /* header */
-header { background-color: #131313; border-bottom: 1px solid #c8a11c; height: 159px; overflow: hidden; width: 100%; }
+header { 
+    background-color: #131313; 
+    border-bottom: 1px solid #c8a11c; 
+    height: 159px; 
+    overflow: hidden; 
+    width: 100%; 
+    position: relative;
+    z-index: 1;
+}
 header .logo,
 header .logo:visited { display: block; float: left; margin: 104px 0 0 776px; }
 header .logo img { display: block; }
 
 /* nav */
-nav { float: right; width: 150px; font-family: 'QuattrocentoSansRegular'; text-align: right; }
+nav { float: right; width: 150px; font-family: 'QuattrocentoSansRegular', sans-serif; text-align: right; }
 nav ul { width: 100%; }
 nav li { display: block; width: 100%; float: left; }
 nav li a,
@@ -246,7 +112,14 @@ nav .current a,
 nav .current a:visited { color: #c8a11c; }
 
 /* container */
-.container { width: 100%; overflow: hidden; }
+.container { 
+    width: 100%; 
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
 .container .wrapper { padding: 36px 0 155px; overflow: hidden; position: relative; }
 
 /* backgrounds */
@@ -254,15 +127,37 @@ nav .current a:visited { color: #c8a11c; }
 .bgwidth { width: 100%; }
 .bgheight { height: 100%; }
 
+/* video backgrounds */
+#contact_video, #podcast_video, #index_video, #bg_grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+#contact_video_html5_api, #podcast_video_html5_api, #index_video_html5_api {
+    width: 100%;
+}
+#bg_grid {
+    border: 1px solid pink;
+    background-image: url(../img/bg_grid.png);
+}
+#contact_video, #podcast_video, #index_video {
+    z-index: -2;
+}
+
 /* footer */
-footer { width: 100%; background: url(/img/bgr-footer.png) repeat-x; position: relative; margin: -72px 0 0; overflow: hidden; height: 72px; }
-footer .wrapper { overflow: hidden; padding: 17px 0 0; }
+footer { width: 100%; background: url(../img/bgr-footer.png) repeat-x bottom; position: relative; margin: -40px 0 0; overflow: hidden; height: 40px; z-index:1;}
+footer .wrapper { overflow: hidden; padding: 7px 0 0; }
 
 /* social */
 .social { float: left; margin: 4px 0 0; }
 .social li { display: block; float: left; }
 .social a,
-.social a:visited { display: block; float: left; text-indent: -9999em; background-image: url(/img/bgr-social.png); background-repeat: no-repeat; height: 21px; }
+.social a:visited { display: block; float: left; text-indent: -9999em; background-image: url(../img/bgr-social.png); background-repeat: no-repeat; height: 21px; }
 .social a:focus { outline: none; }
 .social .fb,
 .social .fb:visited { width: 22px; background-position: 0 0; }
@@ -277,29 +172,44 @@ footer .wrapper { overflow: hidden; padding: 17px 0 0; }
 /* newsletter */
 .newsletter { float: left; width: 221px; margin: 0 121px 0 61px; }
 .newsletter input[type="email"],
-.newsletter input[type="text"] { float: left; background: url(/img/bgr-newsletter.png) no-repeat; width: 160px; height: 28px; line-height: 28px; vertical-align: middle; padding: 0 12px; display: block; color: #232124; font-size: 12px; border: 0; outline: none;  box-shadow: none; font-family: 'QuattrocentoSansRegular'; }
-.newsletter input[type="submit"] { float: left; background: url(/img/bgr-submit.png) no-repeat; width: 37px; height: 28px; display: block; cursor: pointer; border: 0; }
+.newsletter input[type="text"] { float: left; background: url(../img/bgr-newsletter.png) no-repeat; width: 160px; height: 28px; line-height: 28px; vertical-align: middle; padding: 0 12px; display: block; color: #232124; font-size: 12px; border: 0; outline: none;  box-shadow: none; font-family: 'QuattrocentoSansRegular', sans-serif; }
+.newsletter input[type="submit"] { float: left; background: url(../img/bgr-submit.png) no-repeat; width: 37px; height: 28px; display: block; cursor: pointer; border: 0; }
 .newsletter input[type="submit"]:focus { outline: none; }
 
 /* copyright */
-.copyright { float: left; color: #e0e0e0; font-size: 12px; line-height: 28px; vertical-align: middle; width: 330px; font-family: 'QuattrocentoSansRegular'; }
+.copyright { float: left; color: #4f4f4f;
+vertical-align: middle; width: 330px;
+font: 12px/12px 'QuattrocentoSansRegular', sans-serif;
+}
 
 /* music */
-.music { float: left; width: 44px; margin: 7px 31px 0 41px; }
+.music { float: right; width: 44px; margin: 0px 0px 20px 41px; }
 .music .on,
-.music .on:visited { float: left; background: url(/img/bgr-sound.png) no-repeat; width: 11px; height: 12px; display: block; text-indent: -9999em; font-size: 0; }
+.music .on:visited { float: left; background: url(../img/bgr-sound.png) no-repeat; width: 11px; height: 12px; display: block; text-indent: -9999em; font-size: 0; }
 .music .action,
 .music .action:visited { float: left; width: 9px; height: 12px; display: block; text-indent: -9999em; font-size: 0; margin: 0 0 0 24px; }
-.music .play { background: url(/img/bgr-play.png) no-repeat; }
+.music .play { background: url(../img/ic_media_play.png) no-repeat; background-size: cover; width: 20px; height: 20px; }
+.music .pause { background: url(../img/ic_media_pause.png) no-repeat; background-size: cover; width: 20px; height: 20px; }
 
 /* facebook */
-.facebook { float: right; background: url(/img/bgr-facebook.png) no-repeat; width: 90px; height: 20px; display: block; text-indent: -9999em; font-size: 0; float: right; margin: 1px 2px 0 0; }
+.facebook, .fb-like { float: right; margin: 1px 2px 0 0; }
 
 /* left-side */
 .left-side { float: left; width: 214px; }
 
 /* content */
 .content { width: 506px; float: left; margin: 0 0 0 62px; }
+
+
+/* index styles
+------------------------------------------------------------------------------*/
+#welcome {
+ margin: 400px 0 0 -100px;
+ white-space: nowrap;
+}
+#welcome h2, #welcome h3 {
+    font-weight: normal;
+}
 
 /* Promo styles
 ------------------------------------------------------------------------------*/
@@ -308,13 +218,68 @@ footer .wrapper { overflow: hidden; padding: 17px 0 0; }
 .promos { width: 100%; }
 .promos figure img { display: block; }
 .promos ul { width: 100%; overflow: hidden; margin: 0; padding: 0; }
-.promos li { display: block; width: 100%; float: left; margin: 0 0 22px; }
+.promos li { display: block; width: 100%; float: left; margin: 0 0 22px; position: relative;
+}
+
 .promos li a,
-.promos li a:visited { display: block; width: 210px; height: 110px; }
-.promos li a img { display: block; }
-.promos li span { display: none; }
-.promos li a:hover .on { display: none; }
-.promos li a:hover span { display: block; }
+.promos li a:visited { 
+    display: block; width: 210px; height: 110px; 
+    text-decoration: none;
+    
+}
+.promos li .thumb { 
+    display: block; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 210px; height: 110px;
+    border: 1px solid #000;
+    z-index: 1;
+}
+.promos li .play { 
+    display: block; 
+    position: absolute;
+    top: 28px;
+    left: 78px;
+    z-index: 2;
+}
+
+.promos li div {
+    background-color: rgba(200, 160, 27, 0.8);
+    border: 1px solid #fff;
+    color:#c8a11c;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 190px; height: 90px;
+    padding: 10px;
+    z-index: 3;
+    display: none;
+}
+.promos li .title {
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+    display: block;
+}
+.promos li .author {
+    color: #000;
+    font-weight: normal;
+    font-size: 16px;
+    display: block;
+}
+.promos li .date {
+    color: #000;
+    font-weight: normal;
+    font-size: 14px;
+}
+.promos li a:hover div {
+    display: block;
+}
+.promos li a:hover .play {
+    display: none;
+}
+
 .promos .nav { width: 210px; overflow: hidden; margin: 33px 0 0; }
 .promos .nav .prev,
 .promos .nav .prev:visited { display: block; float: left; color: #6f6f6f; font-size: 16px; text-decoration: none; width: 88px; line-height: 21px; vertical-align: middle; text-indent: 20px; background-color: #141313; }
@@ -326,15 +291,15 @@ footer .wrapper { overflow: hidden; padding: 17px 0 0; }
 .promos .nav .on:visited { color: #000; background-color: #c8a11c; }
 
 /* promo */
-.promo { font-family: 'QuattrocentoSansRegular';  }
+.promo { font-family: 'QuattrocentoSansRegular', sans-serif;  }
 .promo figure { display: block; }
 .promo figure a,
 .promo figure a:visited { display: block; }
 .promo figure a img { display: block; }
-.promo .meta { display: block; font-size: 15px; line-height: 26px; padding: 20px 0 0; }
+.promo .meta { display: block; font-size: 15px; line-height: 18px; padding: 20px 0 0; }
 .promo .details { margin: 0 0 26px; }
 .promo h2 { font-size: 29px; line-height: normal; padding: 0; margin: 20px 0 0; font-weight: normal; }
-.promo em { text-transform: uppercase; font-style: normal; }
+.promo em { text-transform: uppercase; font-style: normal; font-weight: bold; }
 .promo p { padding: 0; margin: 0; }
 
 /* Podcast styles
@@ -342,15 +307,16 @@ footer .wrapper { overflow: hidden; padding: 17px 0 0; }
 
 /* archive */
 .archive { width: 100%; }
-.archive h2 { font-size: 29px; font-family: 'QuattrocentoSansRegular'; padding: 0; margin: 0 0 7px; text-shadow: 0 1px 1px #404040; font-weight: normal; }
-.archive ul { width: 100%; padding: 0; margin: 0; list-style: none; font-family: 'MyriadPro'; }
+.archive h2 { font-size: 29px; font-family: 'QuattrocentoSansRegular', sans-serif; padding: 0; margin: 0 0 7px; text-shadow: 0 1px 1px #404040; font-weight: normal; }
+.archive ul { width: 100%; padding: 0; margin: 0; list-style: none; font-family: 'QuattrocentoSansRegular', sans-serif; }
 .archive li { width: 100%; display: block; padding: 0; margin: 0; }
 .archive li a,
 .archive li a:visited { display: block; text-decoration: none; color: #fff; font-size: 15px; line-height: 26px; text-shadow: 0 1px 1px #404040; }
 .archive li a:hover { text-decoration: underline; }
+.archive .current a { color: #c8a11c !important; }
 
 /* podcast */
-.podcast { font-family: 'QuattrocentoSansRegular'; }
+.podcast { font-family: 'QuattrocentoSansRegular', sans-serif; }
 .podcast h2 { font-size: 29px; font-weight: normal; padding: 0; margin: 0; text-shadow: 0 1px 1px #404040; }
 .podcast h3 { font-size: 15px; line-height: 26px; padding: 0; margin: 0; font-weight: normal; text-shadow: 0 1px 1px #404040; }
 .podcast .date { font-size: 15px; line-height: 26px; text-shadow: 0 1px 1px #404040; }
@@ -358,9 +324,13 @@ footer .wrapper { overflow: hidden; padding: 17px 0 0; }
 .podcast .meta { margin: 0 0 16px; }
 .podcast p { padding: 0; margin: 0; font-size: 15px; line-height: 26px; text-shadow: 0 1px 1px #404040; }
 .podcast figure img { display: block; margin: 8px 0 0; }
+.podcast h2 a, .podcasts h4 a { text-decoration: none; }
 
 /* podcasts */
-.podcasts { font-family: 'QuattrocentoSansRegular'; margin: 22px 0 0; }
+.playlist li {
+    margin: 0 0 30px 0;
+}
+.podcasts { font-family: 'QuattrocentoSansRegular', sans-serif; margin: 22px 0 0; }
 .podcasts .item { width: 100%; margin: 43px 0 0; }
 .podcasts h4 { padding: 0; margin: 0; font-weight: normal; text-shadow: 0 1px 1px #404040; font-size: 29px; }
 .podcasts h5 { padding: 0; margin: 0; font-weight: normal; text-shadow: 0 1px 1px #404040; font-size: 15px; line-height: 26px; }
@@ -378,35 +348,33 @@ footer .wrapper { overflow: hidden; padding: 17px 0 0; }
 
 /* contact */
 .contact { width: 100%; overflow: hidden; }
-.contact p { padding: 0; margin: 0 0 16px; font-size: 16px; line-height: 24px; color: #e2e2e2; font-family: 'QuattrocentoSansRegular'; text-shadow: 0 1px 1px #404040; }
-.contact p span { text-transform: uppercase; font-size: 24px; font-family: 'JosefinSlabBold'; }
+.contact p { padding: 0; margin: 0 0 16px; font-size: 16px; line-height: 24px; color: #e2e2e2; font-family: 'QuattrocentoSansRegular', sans-serif; text-shadow: 0 1px 1px #404040; }
+.contact p span { text-transform: uppercase; font-size: 24px;  }
 
 /* contact-form */
 .contact-form { width: 100%; overflow: hidden; margin: 68px 0 0; }
 .contact-form fieldset { width: 100%; overflow: hidden; }
 .contact-form #name,
-.contact-form #email2 { clear: both; width: 246px; height: 26px; padding: 0 12px; line-height: 26px; border: 0; vertical-align: middle; border-width: 0 0 1px 1px; border-color: #0c0c0c #555; border-style: solid; font-size: 14px; color: #000; font-family: 'QuattrocentoSansRegular'; }
+.contact-form #email2 { clear: both; width: 246px; height: 26px; padding: 0 12px; line-height: 26px; border: 0; vertical-align: middle; border-width: 0 0 1px 1px; border-color: #0c0c0c #555; border-style: solid; font-size: 14px; color: #000; font-family: 'QuattrocentoSansRegular', sans-serif; }
 .contact-form #email2 { margin: 14px 0 15px; }
-.contact-form textarea { clear: both; width: 468px; height: 145px; padding: 0 12px; line-height: 26px; border: 0; vertical-align: middle; border-width: 0 0 1px 1px; border-color: #0c0c0c #555; border-style: solid; font-size: 14px; color: #000; font-family: 'QuattrocentoSansRegular'; resize: vertical; min-height: 145px; }
+.contact-form textarea { clear: both; width: 468px; height: 145px; padding: 0 12px; line-height: 26px; border: 0; vertical-align: middle; border-width: 0 0 1px 1px; border-color: #0c0c0c #555; border-style: solid; font-size: 14px; color: #000; font-family: 'QuattrocentoSansRegular', sans-serif; resize: vertical; min-height: 145px; }
 .contact-form .row { width: 100%; overflow: hidden; }
 .contact-form .row-wide { width: 493px; overflow: hidden; margin: 20px 0 0; }
-.contact-form #spam-text { width: 80px; height: 34px; padding: 0 8px; line-height: 34px; vertical-align: middle; border: 0; background: url(../img/bgr-spam-text.png) no-repeat; font-size: 14px; font-family: 'QuattrocentoSansRegular'; display: block; float: left; margin: 2px 0 0; }
+.contact-form #spam-text { width: 80px; height: 34px; padding: 0 8px; line-height: 34px; vertical-align: middle; border: 0; background: url(../img/bgr-spam-text.png) no-repeat; font-size: 14px; font-family: 'QuattrocentoSansRegular', sans-serif; display: block; float: left; margin: 2px 0 0; }
 .contact-form .refresh { background: url(../img/bgr-refresh.png) no-repeat; width: 44px; height: 34px; display: block; text-indent: -9999em; font-size: 0; display: block; float: left; margin: 2px 0 0; }
 .contact-form .spam { display: block; float: left; margin: 2px 117px 0 36px; }
 .contact-form .spam img { display: block; }
-.contact-form .row input[type="submit"] { float: left; background: url(../img/bgr-contact-submit.png) no-repeat; width: 106px; height: 36px; display: block; text-indent: -9999em; font-size: 0; border: 0; padding: 0; margin: 0; cursor: pointer; }
+.contact-form .row input[type="submit"] { float: left; background: url(../img/bgr-contact-submit.png) no-repeat; width: 106px; height: 36px; display: block; text-indent: -9999em; font-size: 0; border: 0; padding: 0; margin: 8px 0 0 0; cursor: pointer; }
 .contact-form .row input[type="submit"]:focus { outline: none; }
 
 /* contact-data */
-.contact-data { float: right; width: 308px; text-align: right; clear: both; font-size: 14px; line-height: 21px; margin: 200px 0 0; text-shadow: 0 1px 1px #404040; font-family: 'MyriadPro'; }
+.contact-data { float: right; width: 308px; text-align: right; clear: both; font-size: 14px; line-height: 21px; margin: 200px 0 0; text-shadow: 0 1px 1px #404040; font-family: 'QuattrocentoSansRegular', sans-serif; }
 .ie7 .contact-data { margin-left: -200px; }
 .contact-data a,
 .contact-data a:visited { color: #c8a11c; text-decoration: none; display: block; }
 .contact-data a:hover { text-decoration: underline; }
 
-/* ==|== non-semantic helper classes ========================================
-   Please define your styles before this section.
-   ========================================================================== */
+
 
 /* For image replacement */
 .ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
@@ -431,12 +399,6 @@ footer .wrapper { overflow: hidden; padding: 17px 0 0; }
 
 
 
-/* ==|== media queries ======================================================
-   PLACEHOLDER Media Queries for Responsive Design.
-   These override the primary ('mobile first') styles
-   Modify as content requires.
-   ========================================================================== */
-
 @media only screen and (min-width: 480px) {
   /* Style adjustments for viewports 480px and over go here */
 
@@ -449,10 +411,6 @@ footer .wrapper { overflow: hidden; padding: 17px 0 0; }
 
 
 
-/* ==|== print styles =======================================================
-   Print styles.
-   Inlined to avoid required HTTP connection: h5bp.com/r
-   ========================================================================== */
  
 @media print {
   * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */

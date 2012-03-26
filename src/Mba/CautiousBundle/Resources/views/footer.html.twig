@@ -1,24 +1,11 @@
 <div class="wrapper">
-    <ul class="social">        
-        <li><a href="{{ globals['facebook-url'] is defined ? globals['facebook-url'] : '#' }}" class="fb">Facebook </a></li>
-        <li><a href="{{ globals['linkedin-url'] is defined ? globals['linkedin-url'] : '#' }}" class="in">LinkedIn</a></li>
-        <li><a href="{{ globals['public-email-address'] is defined ? 'mailto:' ~ globals['public-email-address'] : '#' }}" class="email">Email</a></li>
-        <li><a href="{{ globals['rss-url'] is defined ? globals['rss-url'] : '#' }}" class="rss">RSS</a></li>
-        <div class="newsletter">
-            <form action="#" method="post">
-                <fieldset>
-                    <input type="email" name="email" id="email" value="enter email for newsletter" onfocus="if(this.value=='enter email for newsletter') this.value=''" onblur="if(this.value=='') this.value='enter email for newsletter'" >
-                    <input type="submit" value="">
-                </fieldset>
-            </form>
-        </div><!-- newsletter -->
-        <div class="copyright">
-            copyright &#169; 2012 cautious films
-        </div><!-- copyright -->
-        <div class="music">
-            <a href="#" class="on"></a>
-            <a href="#" class="action play"></a>
-        </div><!-- music -->        
-        
-        <span class='st_fblike_hcount' displayText='Facebook Like'></span>
-</div><!-- wrapper -->
+    <div class="copyright">
+        copyright &#169; 2012 cautious films
+    </div>
+    <div class="music">
+        <a href="#" class="" id="start_stop_sound"></a>
+        <a href="#" class="action pause" id="start_stop_btn"></a>
+    </div>
+</div>
+
+

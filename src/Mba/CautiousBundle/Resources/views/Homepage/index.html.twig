@@ -1,8 +1,6 @@
-{% extends "MbaCautiousBundle::layout.html.twig" %}
-{% block bg %}{%endblock%}
-{% block content %}
-    <section class="content content-wide">
-        testing
-    </section>
-{% endblock %}
-        
+{% extends "MbaCautiousBundle::layout_new.html.twig" %}
+{% block welcome %} 
+<section id="welcome">
+    {% autoescape false %}{{ page.content }}{% endautoescape %}    
+</section>                                 
+{% endblock %} 

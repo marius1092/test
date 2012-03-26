@@ -37,6 +37,7 @@ class AppKernel extends Kernel
             new Mba\CautiousBundle\MbaCautiousBundle(),
             new Mba\CautiousAdminBundle\MbaCautiousAdminBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
+            new Mba\BlogBundle\MbaBlogBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -35,7 +35,7 @@ class Page
     /**
      * @var text $content
      *
-     * @ORM\Column(name="content", type="text")
+     * @ORM\Column(name="content", type="text", nullable=true)
      */
     private $content;    
     
