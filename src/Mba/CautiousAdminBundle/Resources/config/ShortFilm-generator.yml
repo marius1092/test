@@ -1,0 +1,33 @@
+generator: admingenerator.generator.doctrine
+params:
+  model: Mba\CautiousBundle\Entity\ShortFilm
+  namespace_prefix: Mba
+  bundle_name: CautiousAdminBundle
+  fields: ~
+
+builders:
+  list:
+    params:
+      title: Short Film
+      display: [title, director, client, video_url,  short_film_date, active]
+      actions:
+        new: ~
+      object_actions:
+        edit: ~
+        delete: ~
+  filters:
+    params:
+      display: []
+  new:
+    params:
+      title: New object for CautiousAdminBundle
+      display: [title, director, client, short_film_date, description, video_url, active]
+      actions:
+        list: ~
+  edit:
+    params:      
+      title: Edit Short Film Entry - "{{ ShortFilm.title }}"
+      display: [title, director, client, short_film_date, description, video_url, active]
+      actions:
+        list: ~
+  delete: ~

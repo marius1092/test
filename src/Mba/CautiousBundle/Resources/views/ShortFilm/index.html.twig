@@ -1,0 +1,81 @@
+{% extends "MbaCautiousBundle::layout_new.html.twig" %}
+{% block aside %}
+<aside class="left-side">
+    <div class="promos">
+        <ul>
+            {% for promo in promos %}
+                <li>
+                    <a href="#" id="thumb_{{loop.index}}">
+                        <img src="/img/play_button.png" class="play" alt="Play">
+                        <img src="{{ vich_uploader_asset(promo, 'image') | apply_filter('promo_thumb') }}" alt="{{ promo.title }}" class="thumb" />
+
+                        <div class="over">
+                            <span class="title">{{ promo.title }}</span>
+                            <span class="author">director: {{ promo.director }}</span>
+                            <span class="date">{{ promo.ShortFilmDate | date("F Y") }}</span>
+                        </div>                                                                
+                    </a>
+                </li>                                                                       
+            {% endfor %}                                                       
+        </ul>
+            
+            <div class="nav">
+                {% if promos.hasPreviousPage %}
+                   <a href="{{path('mba_cautious_promo_index')}}?page={{promos.getPreviousPage}}" class="prev">&#171; prev</a>
+                {% endif %}                    
+                {% if promos.hasNextPage %}
+                   <a href="{{path('mba_cautious_promo_index')}}?page={{promos.getNextPage}}" class="next">next &#187;</a>
+                {% endif %}                                    
+            </div>         
+        </div><!-- promos -->
+    </aside><!-- left-side -->
+{% endblock %}  
+
+{% block content %}
+    <section class="content">
+        {% for promo in promos %}
+            <div class="promo" id="promo_{{loop.index}}">
+                <figure>
+                    {% if promo.videoUrl %}
+                       {{ promo.videoUrl | raw }}                        
+                    {% endif %}
+                </figure>
+                <aside class="meta">
+                    <h2>{{ promo.title }}</h2>
+                    <div class="details">
+                        {% if promo.director %}<em>DIRECTOR:</em> {{ promo.director }}<br />{% endif %}
+                        {% if promo.client %} <em>CLIENT:</em> {{ promo.client }}<br />{% endif %}
+                            <em>DATE:</em> {{ promo.ShortFilmDate | date("F Y") }} <br />
+                        </div><!-- details -->
+                    {{ promo.description | raw }}
+                    </aside><!-- meta -->
+                </div>
+        {% endfor %}                         
+     </section>
+{% endblock %}     
+
+{% block welcome %} 
+            <section id="welcome">    </section>                                 
+{% endblock %} 
+
+{% block extra_js %}
+<script>
+    $(".promo").hide();
+    $('#promo_1').show();
+    $('#thumb_1').click(function() {
+        $(".promo").hide();
+        $('#promo_1').fadeIn('300');
+        return false;
+    });
+     $('#thumb_2').click(function() {
+        $(".promo").hide();
+        $('#promo_2').fadeIn('300');
+        return false;
+    });
+     $('#thumb_3').click(function() {
+        $(".promo").hide();
+        $('#promo_3').fadeIn('300');
+        return false;
+    });    
+</script>            
+{% endblock %}
