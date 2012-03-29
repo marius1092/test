@@ -323,4 +323,24 @@ class Promo {
     {
         return $this->image_over_name;
     }
+
+    /**
+     * Set promo_date
+     *
+     * @param date $promoDate
+     */
+    public function setPromoDate($promoDate)
+    {
+        $this->promo_date = $promoDate;
+    }
+
+    /**
+     * Get promo_date
+     *
+     * @return date 
+     */
+    public function getPromoDate()
+    {
+        return $this->promo_date;
+    }
 }

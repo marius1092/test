@@ -27,7 +27,7 @@ builders:
   edit:
     params:
       title: Edit Page
-      display: [title, content, active, include_in_menu, meta_title, meta_description, meta_keywords]
+      display: [title, content, active, include_in_menu, meta_title, meta_description, meta_keywords, created]
       actions:
         list: ~
   delete: ~

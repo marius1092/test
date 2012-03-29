@@ -13,8 +13,7 @@ class PodcastController extends Controller
     }
     
     /**
-     * @Route("/podcast/")
-     * @Route("/podcast/{date}/")
+     * @Route("/podcast/")     
      * @Template("MbaCautiousBundle:Podcast:index.html.twig")
      */
     public function indexAction($date = '')
@@ -24,14 +23,11 @@ class PodcastController extends Controller
         if (!$page) {
             throw $this->createNotFoundException('The page does not exist');
         }             
+                
+        $podcasts = $this->getEm()->getRepository('MbaCautiousBundle:Podcast')->getAll();                
         
-        $podcast_archive = $this->getEm()->getRepository('MbaCautiousBundle:Podcast')->getArchive();
         
-        if(!$date) {
-            $date = (isset($podcast_archive[0]['aldates'])) ? $podcast_archive[0]['aldates'] : date('F-Y');
-        }
-        $podcasts = $this->getEm()->getRepository('MbaCautiousBundle:Podcast')->getEntriesForDate($date);
         
-        return array('globals' => $globals, 'page' => $page, 'archive' => $podcast_archive, 'podcasts' => $podcasts);
+        return array('globals' => $globals, 'page' => $page, 'podcasts' => $podcasts);
     }
 }
