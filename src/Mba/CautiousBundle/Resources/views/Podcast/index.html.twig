@@ -1,49 +1,70 @@
-{% extends "MbaCautiousBundle::layout.html.twig" %}
+{% extends "MbaCautiousBundle::layout_new.html.twig" %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="/audio/soundmanager/page_player/css/page-player.css">
+<link rel="stylesheet" type="text/css" href="/audio/soundmanager/flashblock/flashblock.css">
+<link rel="stylesheet" type="text/css" href="/audio/soundmanager/page_player/css/optional-annotations.css">
+<link rel="stylesheet" type="text/css" href="/audio/soundmanager/page_player/css/optional-themes.css">
+<style type="text/css">
+        ul.playlist li .comment {font-size:0.65em;opacity:0.5}
+    </style>
+    <script src="/audio/soundmanager/core_js/soundmanager2.js"></script>
+
+    <script>
+
+    /* --------
+
+      Config override: This demo uses shiny flash 9 stuff, overwriting Flash 8-based defaults
+      Alternate PP_CONFIG object must be defined before soundManager.onready()/onload() fire.
+      Alternately, edit the config in page-player.js to simply use the values below by default
+
+    -------- */
+
+    // demo only, but you can use these settings too..
+    soundManager.flashVersion = 9;
+    soundManager.preferFlash = true; // for visualization effects
+    soundManager.useHighPerformance = true; // keep flash on screen, boost performance
+    soundManager.wmode = 'transparent'; // transparent SWF, if possible
+    soundManager.useFastPolling = true; // increased JS callback frequency
+    soundManager.url = '/audio/soundmanager/swf/';
+    var PP_CONFIG = {
+      autoStart: false,      // begin playing first sound when page loads
+      playNext: true,        // stop after one sound, or play through list until end
+      useThrottling: false,  // try to rate-limit potentially-expensive calls (eg. dragging position around)</span>
+      usePeakData: true,     // [Flash 9 only] whether or not to show peak data (left/right channel values) - nor noticable on CPU
+      useWaveformData: false,// [Flash 9 only] show raw waveform data - WARNING: LIKELY VERY CPU-HEAVY
+      useEQData: false,      // [Flash 9 only] show EQ (frequency spectrum) data
+      useFavIcon: false     // try to apply peakData to address bar (Firefox + Opera) - performance note: appears to make Firefox 3 do some temporary, heavy disk access/swapping/garbage collection at first(?) - may be too heavy on CPU
+    }
+        </script>
+        <script src="/audio/soundmanager/page_player/script/page-player.js"></script>
+        <script src="/audio/soundmanager/page_player/script/optional-page-player-metadata.js"></script>
+{% endblock %}    
+
 
 {% block aside %}
-<aside class="left-side">
-    <div class="archive">
-        <h2>ARCHIVE</h2>
-        <ul>
-            {% for entry in archive %}
-                <li><a href="{{ path('mba_cautious_podcast_index_1', { 'date': entry['aldates'] } )}}" title="{{ entry['adates'] }}">{{ entry['adates'] }}</a></li>
-            {% endfor %}                                          
-            </ul>
-        </div><!-- archive -->
-    </aside><!-- left-side -->
+        <aside class="left-side">
+        </aside><!-- left-side -->
 {% endblock %}  
 
 {% block content %}
-    <section class="content">
-        {% for podcast in podcasts %}
-            {% if loop.index == 1 %}
-                <div class="podcast">
-                    <aside class="meta">
-                        <h2>{{ podcast.title }}</h2>
-                        {% if podcast.subtitle %}<h3>{{ podcast.subtitle }}</h3>{% endif %}
-                        <div class="date"><em>DATE:</em> {{ podcast['podcast_date'] | date("F Y") }}</div>
-                    </aside><!-- meta -->
-                    <p>{{ podcast.description }}</p>
-                    <figure>
-                        <a href="#"><img src="/img/pic-playbar.jpg" alt=""></a>
-                    </figure>
-                </div><!-- podcast -->                 
-                {% endif %}
-        {% endfor%}
-        
-        <div class="podcasts">
-        {% for podcast in podcasts %}
-            {% if loop.index != 1 %}
-                <div class="item">
-                    <h4>{{ podcast.title }}</h4>
-                    {% if podcast.subtitle %}<h5>{{ podcast.subtitle }}</h5>{% endif %}
-                    <div class="date"><em>DATE:</em> {{ podcast['podcast_date'] | date("F Y") }}</div>
-                    <a href="#" class="play"><img src="/img/pic-playbar.jpg" alt=""></a>
-                </div><!-- item -->                
-            {%endif%} 
-        {% endfor%}
-        </div>
-                            
-    </section><!-- content -->
+        <section class="content">
+            <div class="podcasts">
+                <div id="sm2-container">
+                    <!-- SM2 flash goes here -->
+                </div>    			
+                <ul class="playlist">
+                            {% for podcast in podcasts %}
+                                <li>
+                                    <a href="/audio/podcasts/bass.mp3"><h4>{{ podcast.title }}</h4></a>
+                                    <div class="podcast">
+                                        <aside class="meta">
+                                                {% if podcast.subtitle %}<h3>{{ podcast.subtitle }}</h3>{% endif %}
+                                        </aside><!-- meta -->
+                                    </div><!-- podcast -->
+                                </li>                           
+                            {% endfor %}
+                </ul>    			
+            </div>        
+        </section><!-- content -->
 {% endblock %} 
 
