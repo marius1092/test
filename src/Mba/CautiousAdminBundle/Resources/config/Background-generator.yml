@@ -1,0 +1,33 @@
+generator: admingenerator.generator.doctrine
+params:
+  model: Mba\CautiousBundle\Entity\Background
+  namespace_prefix: Mba
+  bundle_name: CautiousAdminBundle
+  fields: ~
+
+builders:
+  list:
+    params:
+      title: List for CautiousAdminBundle
+      display: ~
+      actions:
+        new: ~
+      object_actions:
+        edit: ~
+        delete: ~
+  filters:
+    params:
+      display: ~
+  new:
+    params:
+      title: New object for CautiousAdminBundle
+      display: [title]
+      actions:
+        list: ~
+  edit:
+    params:
+      title: You're editing the object "{{ Background.title }}"
+      display: [title]
+      actions:
+        list: ~
+  delete: ~

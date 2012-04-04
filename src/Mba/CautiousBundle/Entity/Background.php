@@ -1,0 +1,255 @@
+<?php
+
+namespace Mba\CautiousBundle\Entity;
+
+use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Mba\CautiousBundle\Entity\Background
+ *
+ * @ORM\Table(name="background")
+ * @ORM\Entity()
+ * @Vich\Uploadable
+ */
+class Background {
+
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string $title
+     *
+     * @ORM\Column(name="title", type="string", length=255)
+     */
+    private $title;
+    
+    /**
+     * @Assert\File(
+     *     maxSize="2M",
+     *     mimeTypes={"image/png", "image/jpeg", "image/pjpeg"}
+     * )
+     * @Vich\UploadableField(mapping="imageFile", fileNameProperty="image_name")
+     *
+     * @var File $image
+     */
+    protected $image;
+
+    /**
+     * @var string $image_name
+     *
+     * @ORM\Column(name="image_name", type="string", length=255, nullable=true)
+     */
+    private $image_name;    
+
+    /**
+     * @Assert\File(
+     *     maxSize="10M",
+     *     mimeTypes={"video/mp4"}
+     * )
+     * @Vich\UploadableField(mapping="videoFile", fileNameProperty="video_mp4_name")
+     *
+     * @var File $video_mp4
+     */
+    protected $video_mp4;
+
+    /**
+     * @var string $video_mp4_name
+     *
+     * @ORM\Column(name="video_mp4_name", type="string", length=255, nullable=true)
+     */
+    private $video_mp4_name;
+
+    /**
+     * @Assert\File(
+     *     maxSize="10M",
+     *     mimeTypes={"video/webm", "application/octet-stream"}
+     * )
+     * @Vich\UploadableField(mapping="videoFile", fileNameProperty="video_webm_name")
+     *
+     * @var File $video_webm
+     */
+    protected $video_webm;
+
+    /**
+     * @var string $video_webm_name
+     *
+     * @ORM\Column(name="video_webm_name", type="string", length=255, nullable=true)
+     */
+    private $video_webm_name;
+    
+    /**
+     * @Assert\File(
+     *     maxSize="10M",
+     *     mimeTypes={"video/ogg", "application/ogg"}
+     * )
+     * @Vich\UploadableField(mapping="videoFile", fileNameProperty="video_ogg_name")
+     *
+     * @var File $video_ogg
+     */
+    protected $video_ogg;
+
+    /**
+     * @var string $video_ogg_name
+     *
+     * @ORM\Column(name="video_ogg_name", type="string", length=255, nullable=true)
+     */
+    private $video_ogg_name;    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string 
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * Set video_mp4_name
+     *
+     * @param string $videoMp4Name
+     */
+    public function setVideoMp4Name($videoMp4Name)
+    {
+        $this->video_mp4_name = $videoMp4Name;
+    }
+
+    /**
+     * Get video_mp4_name
+     *
+     * @return string 
+     */
+    public function getVideoMp4Name()
+    {
+        return $this->video_mp4_name;
+    }
+    
+    public function getVideoMp4() 
+    {
+        return $this->video_mp4;
+    }    
+    
+    public function setVideoMp4($video) 
+    {
+        $this->video_mp4 = $video;
+    }
+
+    public function getVideoWebm() 
+    {
+        return $this->video_webm;
+    }    
+    
+    public function setVideoWebm($video) 
+    {
+        $this->video_webm = $video;
+    }
+
+    public function getVideoOgg() 
+    {
+        return $this->video_ogg;
+    }    
+    
+    public function setVideoOgg($video) 
+    {
+        $this->video_ogg = $video;
+    }
+
+    public function getImage() 
+    {
+        return $this->image;
+    }    
+    
+    public function setImage($image) 
+    {
+        $this->image = $image;
+    }        
+
+    /**
+     * Set image_name
+     *
+     * @param string $imageName
+     */
+    public function setImageName($imageName)
+    {
+        $this->image_name = $imageName;
+    }
+
+    /**
+     * Get image_name
+     *
+     * @return string 
+     */
+    public function getImageName()
+    {
+        return $this->image_name;
+    }
+
+    /**
+     * Set video_webm_name
+     *
+     * @param string $videoWebmName
+     */
+    public function setVideoWebmName($videoWebmName)
+    {
+        $this->video_webm_name = $videoWebmName;
+    }
+
+    /**
+     * Get video_webm_name
+     *
+     * @return string 
+     */
+    public function getVideoWebmName()
+    {
+        return $this->video_webm_name;
+    }
+
+    /**
+     * Set video_ogg_name
+     *
+     * @param string $videoOggName
+     */
+    public function setVideoOggName($videoOggName)
+    {
+        $this->video_ogg_name = $videoOggName;
+    }
+
+    /**
+     * Get video_ogg_name
+     *
+     * @return string 
+     */
+    public function getVideoOggName()
+    {
+        return $this->video_ogg_name;
+    }
+}
