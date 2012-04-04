@@ -11,6 +11,11 @@ MbaBlogBundle:
 _imagine:
     resource: .
     type:     imagine   
+
+MbaCautiousAdminBundle_admin_mba_cautious_admin_bundle_background:
+    resource: "@MbaCautiousAdminBundle/Controller/Background/"
+    type:     admingenerator
+    prefix:   /admin/background
     
 MbaCautiousAdminBundle_admin_mba_cautious_admin_bundle_short_film:
     resource: "@MbaCautiousAdminBundle/Controller/ShortFilm/"
