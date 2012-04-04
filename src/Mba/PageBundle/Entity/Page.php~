@@ -91,6 +91,12 @@ class Page
     private $meta_keywords;            
     
     /**
+     * @ORM\OneToOne(targetEntity="Mba\CautiousBundle\Entity\Background")
+     * @ORM\JoinColumn(name="background_id", referencedColumnName="id")
+     */
+    private $background;    
+    
+    /**
      * Get id
      *
      * @return integer 
@@ -298,5 +304,25 @@ class Page
     public function getUpdated()
     {
         return $this->updated;
+    }
+
+    /**
+     * Set background
+     *
+     * @param Mba\CautiousBundle\Background $background
+     */
+    public function setBackground(\Mba\CautiousBundle\Background $background)
+    {
+        $this->background = $background;
+    }
+
+    /**
+     * Get background
+     *
+     * @return Mba\CautiousBundle\Background 
+     */
+    public function getBackground()
+    {
+        return $this->background;
     }
 }

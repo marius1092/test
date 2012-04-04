@@ -9,7 +9,7 @@ builders:
   list:
     params:
       title: List for PageBundle
-      display: [title, meta_title, active, include_in_menu, created]
+      display: [title, background, active, include_in_menu, created]
       actions:
         new: ~
       object_actions:
@@ -21,13 +21,13 @@ builders:
   new:
     params:
       title: New object for PageBundle
-      display: [title, content, active, include_in_menu, meta_title, meta_description, meta_keywords]
+      display: [title, background, content, active, include_in_menu, meta_title, meta_description, meta_keywords]
       actions:
         list: ~
   edit:
     params:
       title: Edit Page
-      display: [title, content, active, include_in_menu, meta_title, meta_description, meta_keywords, created]
+      display: [title, background, content, active, include_in_menu, meta_title, meta_description, meta_keywords, created]
       actions:
         list: ~
   delete: ~

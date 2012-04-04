@@ -9,7 +9,7 @@ builders:
   list:
     params:
       title: Podcast
-      display: [title, subtitle, podcast_date, audio_url, active]
+      display: [title, audio_mp3_name, subtitle, podcast_date, audio_url, active]
       actions:
         new: ~
       object_actions:
@@ -21,7 +21,7 @@ builders:
   new:
     params:
       title: New Podcast Entry      
-      display: [title, subtitle, podcast_date, description, audio_url, active]
+      display: [title, subtitle, podcast_date, description, active]
       actions:
         list: ~
   edit:

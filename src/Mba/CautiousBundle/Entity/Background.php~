@@ -49,6 +49,24 @@ class Background {
      * @ORM\Column(name="image_name", type="string", length=255, nullable=true)
      */
     private $image_name;    
+    
+    /**
+     * @Assert\File(
+     *     maxSize="2M",
+     *     mimeTypes={"image/png", "image/jpeg", "image/pjpeg"}
+     * )
+     * @Vich\UploadableField(mapping="imageFile", fileNameProperty="poster_image_name")
+     *
+     * @var File $poster_iamge
+     */
+    protected $poster_image;
+
+    /**
+     * @var string $poster_image_name
+     *
+     * @ORM\Column(name="poster_image_name", type="string", length=255, nullable=true)
+     */
+    private $poster_image_name;     
 
     /**
      * @Assert\File(
@@ -71,7 +89,7 @@ class Background {
     /**
      * @Assert\File(
      *     maxSize="10M",
-     *     mimeTypes={"video/webm"}
+     *     mimeTypes={"video/webm", "application/octet-stream"}
      * )
      * @Vich\UploadableField(mapping="videoFile", fileNameProperty="video_webm_name")
      *
@@ -89,7 +107,7 @@ class Background {
     /**
      * @Assert\File(
      *     maxSize="10M",
-     *     mimeTypes={"video/ogg"}
+     *     mimeTypes={"video/ogg", "application/ogg"}
      * )
      * @Vich\UploadableField(mapping="videoFile", fileNameProperty="video_ogg_name")
      *
@@ -103,6 +121,27 @@ class Background {
      * @ORM\Column(name="video_ogg_name", type="string", length=255, nullable=true)
      */
     private $video_ogg_name;    
+    
+    /**
+     * @var date $created
+     *
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="date")
+     */
+    private $created;
+
+    /**
+     * @var date $updated
+     *
+     * @ORM\Column(type="date")
+     * @Gedmo\Timestampable(on="update")
+     */
+    private $updated; 
+    
+    public function __toString()
+    {
+        return $this->title;
+    }
     /**
      * Get id
      *
@@ -191,7 +230,17 @@ class Background {
     public function setImage($image) 
     {
         $this->image = $image;
-    }        
+    }  
+    
+    public function getPosterImage() 
+    {
+        return $this->poster_image;
+    }    
+    
+    public function setPosterImage($image) 
+    {
+        $this->poster_image = $image;
+    }   
 
     /**
      * Set image_name
@@ -251,5 +300,65 @@ class Background {
     public function getVideoOggName()
     {
         return $this->video_ogg_name;
+    }
+
+    /**
+     * Set created
+     *
+     * @param date $created
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+    }
+
+    /**
+     * Get created
+     *
+     * @return date 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param date $updated
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return date 
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
+     * Set poster_image_name
+     *
+     * @param string $posterImageName
+     */
+    public function setPosterImageName($posterImageName)
+    {
+        $this->poster_image_name = $posterImageName;
+    }
+
+    /**
+     * Get poster_image_name
+     *
+     * @return string 
+     */
+    public function getPosterImageName()
+    {
+        return $this->poster_image_name;
     }
 }

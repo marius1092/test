@@ -4,6 +4,8 @@ namespace Mba\CautiousBundle\Entity;
 
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Mba\CautiousBundle\Entity\Podcast
@@ -59,16 +61,60 @@ class Podcast
     /**
      * @var string $audio_url
      *
-     * @ORM\Column(name="audio_url", type="string", length=255)
+     * @ORM\Column(name="audio_url", type="string", length=255, nullable=true)
      */
     private $audio_url;
 
+    /**
+     * @Assert\File(
+     *     maxSize="5M",
+     *     mimeTypes={"audio/mpeg"}
+     * )
+     * @Vich\UploadableField(mapping="audioFile", fileNameProperty="audio_mp3_name")
+     *
+     * @var File $audio_mp3
+     */
+    protected $audio_mp3;
+
+    /**
+     * @var string $audio_mp3_name
+     *
+     * @ORM\Column(name="audio_mp3_name", type="string", length=255, nullable=true)
+     */
+    private $audio_mp3_name;
+    
     /**
      * @var boolean $active
      *
      * @ORM\Column(name="active", type="boolean")
      */
     private $active = true;
+    
+    /**
+     * @var date $created
+     *
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(type="date")
+     */
+    private $created;
+
+    /**
+     * @var date $updated
+     *
+     * @ORM\Column(type="date")
+     * @Gedmo\Timestampable(on="update")
+     */
+    private $updated;     
+    
+    public function getAudioMp3()
+    {
+        return $this->audio_mp3;
+    }
+    
+    public function setAudioMp3($audio)
+    {
+        $this->audio_mp3 = $audio;
+    }
     
     /**
      * Get id
@@ -218,5 +264,25 @@ class Podcast
     public function getActive()
     {
         return $this->active;
+    }
+
+    /**
+     * Set audio_mp3_name
+     *
+     * @param string $audioMp3Name
+     */
+    public function setAudioMp3Name($audioMp3Name)
+    {
+        $this->audio_mp3_name = $audioMp3Name;
+    }
+
+    /**
+     * Get audio_mp3_name
+     *
+     * @return string 
+     */
+    public function getAudioMp3Name()
+    {
+        return $this->audio_mp3_name;
     }
 }

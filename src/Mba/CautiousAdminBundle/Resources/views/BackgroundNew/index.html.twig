@@ -1,1 +1,45 @@
 {% extends_admingenerated "MbaCautiousAdminBundle:BackgroundNew:index.html.twig" %}
+
+ {% block form %}
+    <form
+        {% if Background.id %}
+            action="{{ path("Mba_CautiousAdminBundle_Background_update", { 'id': Background.id }) }}"
+        {% else %}
+            action="{{ path("Mba_CautiousAdminBundle_Background_create") }}"
+        {% endif %}
+        method="post" {{ form_enctype(form) }}>
+
+        {{ form_errors(form) }}
+
+        {% block form_fieldset_NONE %}
+        <fieldset class="form_block form_fieldset_NONE">
+            <div class="form_row">
+                                                <div class="form_field">
+                    {% block form_title %}
+                        {{ form_label(form['title'], 'Title') }}
+
+                        {{ form_widget(form['title']) }}{{ form_errors(form['title']) }}
+                    {% endblock %}
+                </div>
+                                </div>
+        </fieldset>
+        {% endblock %}
+
+        <ul class="actions">
+            <li>
+                 {{ form_rest(form) }}
+                 <input type="submit" class="submit_button" value="{% trans from "Admingenerator" %}form.btn_save{% endtrans %}" />
+            </li>
+        </ul>
+
+        {% block form_actions %}
+         <ul class="form_actions actions">
+                  
+         <li><a class="list" href="{{ path("Mba_CautiousAdminBundle_Background_list") }}">{% trans from "Admingenerator" %}List{% endtrans %}</a></li>
+
+          
+        </ul>
+        {% endblock %}
+
+    </form>
+    {% endblock %}

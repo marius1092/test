@@ -37,11 +37,12 @@
     </div><!-- container -->
     <div id="bg_grid"></div>
     {% block video %}
+       <!-- 
         <video id="index_video" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="100%" poster="/video/stills/tunnel.jpg" data-setup='{ "controls": false, "autoplay": true, "preload": "auto", "loop": true }'>
             <source src="/video/city.mp4" type='video/mp4'>
             <source src="/video/city.webm" type='video/webm'>
             <source src="/video/city.ogv" type='video/ogg'>
-        </video>    
+        </video>    -->
     {% endblock %}
 </div><!-- nonfooter -->
 <footer>
@@ -51,7 +52,9 @@
 		</div>
 		<div class="music">
                         <a href="#" class="" id="start_stop_sound"></a>
-			<a href="#" class="action pause" id="start_stop_btn"></a>
+                        {% block play_button %}
+                            <a href="#" class="action pause" id="start_stop_btn"></a>
+                        {% endblock %}
 		</div>
 	</div>
 </footer><!-- footer -->

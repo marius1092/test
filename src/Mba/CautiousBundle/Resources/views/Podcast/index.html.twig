@@ -53,18 +53,18 @@
                     <!-- SM2 flash goes here -->
                 </div>    			
                 <ul class="playlist">
-                            {% for podcast in podcasts %}
+                    {% for podcast in podcasts %}
                         <li>
-                            <a href="/audio/podcasts/bass.mp3"><h4>{{ podcast.title }}</h4></a>
+                            <a href="{{vich_uploader_asset(podcast, 'audio_mp3') }}"><h4>{{ podcast.title }}</h4></a>
                             <div class="podcast">
                                 <aside class="meta">
-                                                {% if podcast.subtitle %}<h3>{{ podcast.subtitle }}</h3>{% endif %}
-                                    </aside><!-- meta -->
-                                </div><!-- podcast -->
-                            </li>                           
-                            {% endfor %}
-                        </ul>    			
-                    </div>        
-                </section><!-- content -->
+                                     {% if podcast.subtitle %}<h3>{{ podcast.subtitle }}</h3>{% endif %}
+                                </aside><!-- meta -->
+                            </div><!-- podcast -->
+                        </li>                           
+                    {% endfor %}
+                 </ul>    			
+             </div>        
+        </section><!-- content -->
 {% endblock %} 
 

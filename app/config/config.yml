@@ -113,6 +113,9 @@ avalanche_imagine:
         promo_thumb:
             type:    thumbnail
             options: { size: [210, 110], mode: outbound }                
+        bg_thumb:
+            type:    thumbnail
+            options: { size: [255, 192], mode: outbound }                
         
 vich_uploader:
     db_driver: orm # or mongodb
@@ -134,6 +137,9 @@ vich_uploader:
             namer: ~ # specify a namer service id for this entity, null default
             delete_on_remove: false # determines whether to delete file upon removal of entity
             inject_on_load: true # determines whether to inject a File instance upon load             
+        audioFile:
+            upload_dir: %kernel.root_dir%/../web/uploads/audio
+            namer: ~ # specify a namer service id for this entity, null default
+            delete_on_remove: false # determines whether to delete file upon removal of entity
+            inject_on_load: true # determines whether to inject a File instance upon load                         
             
-          
-                
