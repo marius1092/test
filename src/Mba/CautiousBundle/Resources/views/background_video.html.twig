@@ -1,0 +1,9 @@
+{% if not page.Background.imageName %}
+<video id="index_video" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="100%" 
+        poster="{{vich_uploader_asset(page.Background, 'poster_image')}}" 
+        data-setup='{ "controls": false, "autoplay": true, "preload": "auto", "loop": true }'>
+   {% if page.Background.VideoMp4Name %}<source src="{{ vich_uploader_asset(page.Background, 'video_mp4') }}" type='video/mp4'></source>{% endif %}
+   {% if page.Background.VideoWebmName %}<source src="{{ vich_uploader_asset(page.Background, 'video_webm') }}" type='video/webm'></source>{% endif %}
+   {% if page.Background.VideoOggName %}<source src="{{ vich_uploader_asset(page.Background, 'video_ogg') }}" type='video/ogg'></source>{% endif %}                        
+</video>    
+{% endif %}
