@@ -14,7 +14,7 @@ class EditType extends BaseEditType
                 'ui_colour' => '#fff',
                 'startup_outline_blocks' => false,
                 'width'    => '800',
-                'height' => '300',
+                'height' => '400',
             ));
     }
 }

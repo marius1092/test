@@ -96,7 +96,7 @@ class Blog
      * @ORM\Column(name="meta_keywords", type="text", nullable=true)
      */
     private $meta_keywords;                
-   
+       
     /**
      * Get id
      *

@@ -18,6 +18,7 @@ class BlogRepository extends EntityRepository {
             FROM blog p            
             WHERE p.active = ?
             GROup BY DATE_FORMAT(p.entry_date, \'%M %Y\')
+            ORDER BY p.entry_date DESC
           ', array(true));
 
         return $results;

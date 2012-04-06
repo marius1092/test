@@ -4,7 +4,7 @@
 {% block body %}
     {% block page_title %}
 <head>
-<h1>Dashboard</h1>
+<h1>Admin Dashboard</h1>
 </head>
     {% endblock %}
 
@@ -12,57 +12,45 @@
     <section class="slide-up-boxes">
         
         <a href="{{ path("Mba_PageBundle_Page_list") }}">
-            <h5>Main Content</h5>
-            <div>Manage content of the website</div>				
+            <h5>Pages</h5>
+            <div>Use this section to manage content on existing pages or create new pages. You have the options to make the pages show up in the main menu and to use html tags.</div>
         </a>
         
         <a href="{{ path("Mba_BlogBundle_Blog_list") }}">
             <h5>News</h5>
-            <div>Manage content of the website</div>				
+            <div>Use this section to add your news to your website and update your visitors with latest information.</div>				
         </a>        
                 
-        <a href="{{ path("Mba_GlobalSettingsBundle_Gs_list") }}">
-            <h5>Global Settings</h5>
-            <div>Manage important settings of the website</div>				
-        </a>
-        
-        <a href="{{ path("Mba_GlobalSettingsBundle_Gs_list") }}">
-            <h5>Contact Enquires</h5>
-            <div>Manage important settings of the website</div>				
-        </a>
-        
-        <a href="{{ path("Mba_GlobalSettingsBundle_Gs_list") }}">
-            <h5>Newsletter Requests</h5>
-            <div>Manage important settings of the website</div>				
-        </a>        
-        
-        <a href="{{ path("Mba_GlobalSettingsBundle_Gs_list") }}">
-            <h5>Users</h5>
-            <div>Manage important settings of the website</div>				
-        </a>                
-        
-        <a href="{{ path("Mba_GlobalSettingsBundle_Gs_list") }}">
-            <h5>Traffic Statistics</h5>
-            <div>Manage important settings of the website</div>				
-        </a>                
-        
         <a href="{{ path("Mba_CautiousAdminBundle_Promo_list") }}">
-            <h5>Promo Work</h5>
-            <div>Manage important settings of the website</div>				
-        </a>           
-        
-        <a href="{{ path("Mba_CautiousAdminBundle_Podcast_list") }}">
-            <h5>Podcast</h5>
-            <div>Manage important settings of the website</div>				
-        </a>                   
+            <h5>Promos</h5>
+            <div>This section is for managing all the promo work that you did. You can choose which promo work should be visible on website, add details about promos and embed a video.</div>
+        </a>
         
         <a href="{{ path("Mba_CautiousAdminBundle_ShortFilm_list") }}">
-            <h5>Short Film Work</h5>
-            <div>Manage important settings of the website</div>				
-        </a>                   
+            <h5>Short Films</h5>
+            <div>Use this section to present all the short films that you did by adding a title and description. You can also embed a video.</div>
+        </a>
         
+        <a href="{{ path("Mba_CautiousAdminBundle_Podcast_list") }}">
+            <h5>Podcasts</h5>
+            <div>Keep track to all your podcasts and present them to your visitors using this section.</div>
+        </a>        
         
+        <a href="{{ path("Mba_CautiousAdminBundle_Background_list") }}">
+            <h5>Backgrounds</h5>
+            <div>Create video and image backgrounds in this section and then go to Pages section to add them to specific pages. </div>
+        </a>                
+              
+        {#<a href="{{ path("") }}">
+            <h5>Users</h5>
+            <div>Manage all the users who can access your website.</div>
+        </a>  #}
         
+        <a href="{{ path("Mba_GlobalSettingsBundle_Gs_list") }}">
+            <h5>Settings</h5>
+            <div>Manage important settings of the website and amend your Google analytics code, Facebook and LinkedIn URL's</div>				
+        </a>                
+                                       
     </section>
 </div> 
 

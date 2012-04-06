@@ -1,6 +1,7 @@
 {% extends_admingenerated "MbaCautiousAdminBundle:ShortFilmEdit:index.html.twig" %}
+
 {% block form %}
-<form
+    <form
         {% if ShortFilm.id %}
             action="{{ path("Mba_CautiousAdminBundle_ShortFilm_update", { 'id': ShortFilm.id }) }}"
         {% else %}
@@ -10,8 +11,9 @@
 
         {{ form_errors(form) }}
 
-        {% block form_fieldset_NONE %}
-        <fieldset class="form_block form_fieldset_NONE">
+        {% block form_fieldset_Content %}
+        <fieldset class="form_block form_fieldset_Content">
+                <legend>{% trans from "Admin" %}Content{% endtrans %}</legend>
             <div class="form_row">
                                                 <div class="form_field">
                     {% block form_title %}
@@ -41,63 +43,59 @@
                                 </div>
             <div class="form_row">
                                                 <div class="form_field">
-                    {% block form_promo_date %}
-                        {{ form_label(form['short_film_date'], 'Short Film date') }}
-
-                        {{ form_widget(form['short_film_date']) }}{{ form_errors(form['short_film_date']) }}
-                    {% endblock %}
-                </div>
-                                </div>
-            <div class="form_row">
-                                                <div class="form_field">
                     {% block form_description %}
-                        {{ form_label(form['description'], 'Description') }}
+                        {#  {{ form_label(form['description'], 'Description') }} #}
 
                         {{ form_widget(form['description']) }}{{ form_errors(form['description']) }}
                     {% endblock %}
                 </div>
                                 </div>
+        </fieldset>
+        {% endblock %}
+
+        {% block form_fieldset_Media %}
+        <fieldset class="form_block form_fieldset_Media">
+                <legend>{% trans from "Admin" %}Media{% endtrans %}</legend>
             <div class="form_row">
                                                 <div class="form_field">
                     {% block form_video_url %}
-                        {{ form_label(form['video_url'], 'Video url') }}
-
+                        {{ form_label(form['video_url'], 'Embed Video') }}
                         {{ form_widget(form['video_url']) }}{{ form_errors(form['video_url']) }}
                     {% endblock %}
-                </div>
-                                </div>
-            <div class="form_row">
-                <div class="form_field">
-                    {% block form_image %}
-                        {{ form_label(form['image'], 'ShortFilm Image') }}
-
-                        {{ form_widget(form['image']) }}{{ form_errors(form['image']) }}
-                    {% endblock %}
-                    <br />    
-                    <img src="{{ vich_uploader_asset(ShortFilm, 'image') | apply_filter('promo_thumb') }}" alt="{{ ShortFilm.title }}" />                    
-                </div>
-            </div>                
-                
-            <div class="form_row">
-                <div class="form_field">
-                    {% block form_image_over %}
-                        {{ form_label(form['imageOver'], 'ShortFilm Image Over') }}
-
-                        {{ form_widget(form['imageOver']) }}{{ form_errors(form['imageOver']) }}
-                    {% endblock %}
-                    <br />                               
-                    {% if ShortFilm.imageOverName %}
-                        <img src="{{ vich_uploader_asset(ShortFilm, 'imageOver') | apply_filter('promo_thumb') }}" alt="{{ ShortFilm.title }}" />
-                    {% endif %}    
-                </div>
+                </div> <br />                
+                {{ ShortFilm.videoUrl | raw}}                
             </div>
                 
             <div class="form_row">
                                                 <div class="form_field">
+                    {% block form_video_url1 %}
+                        {{ form_label(form['image'], 'Image') }}
+                        {{ form_widget(form['image']) }}{{ form_errors(form['image']) }}
+                    {% endblock %}
+                </div> <br />
+                <img src="{{ vich_uploader_asset(ShortFilm, 'image') | apply_filter('promo_thumb') }}" alt="{{ ShortFilm.title }}" />                    
+            </div>                
+        </fieldset>
+        {% endblock %}
+
+        {% block form_fieldset_Settings %}
+        <fieldset class="form_block form_fieldset_Settings">
+                <legend>{% trans from "Admin" %}Settings{% endtrans %}</legend>
+            <div class="form_row">
+                <div class="form_field">
                     {% block form_active %}
                         {{ form_label(form['active'], 'Active') }}
 
                         {{ form_widget(form['active']) }}{{ form_errors(form['active']) }}
+                    {% endblock %}
+                </div>
+                                </div>
+            <div class="form_row">
+                                                <div class="form_field">
+                    {% block form_short_film_date %}
+                        {{ form_label(form['short_film_date'], 'Short film date') }}
+
+                        {{ form_widget(form['short_film_date']) }}{{ form_errors(form['short_film_date']) }}
                     {% endblock %}
                 </div>
                                 </div>

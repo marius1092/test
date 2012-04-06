@@ -1,99 +1,95 @@
 {% extends_admingenerated "MbaCautiousAdminBundle:PodcastEdit:index.html.twig" %}
 
- {% block form %}
-<form
+  {% block form %}
+    <form
         {% if Podcast.id %}
-        action="{{ path("Mba_CautiousAdminBundle_Podcast_update", { 'id': Podcast.id }) }}"
+            action="{{ path("Mba_CautiousAdminBundle_Podcast_update", { 'id': Podcast.id }) }}"
         {% else %}
-        action="{{ path("Mba_CautiousAdminBundle_Podcast_create") }}"
+            action="{{ path("Mba_CautiousAdminBundle_Podcast_create") }}"
         {% endif %}
         method="post" {{ form_enctype(form) }}>
 
         {{ form_errors(form) }}
 
-        {% block form_fieldset_NONE %}
-        <fieldset class="form_block form_fieldset_NONE">
+        {% block form_fieldset_Content %}
+        <fieldset class="form_block form_fieldset_Content">
+                <legend>{% trans from "Admin" %}Content{% endtrans %}</legend>
             <div class="form_row">
-                <div class="form_field">
+                                                <div class="form_field">
                     {% block form_title %}
                         {{ form_label(form['title'], 'Title') }}
+
                         {{ form_widget(form['title']) }}{{ form_errors(form['title']) }}
                     {% endblock %}
-                    </div>
                 </div>
-                <div class="form_row">
-                    <div class="form_field">
+                                </div>
+            <div class="form_row">
+                                                <div class="form_field">
                     {% block form_subtitle %}
                         {{ form_label(form['subtitle'], 'Subtitle') }}
+
                         {{ form_widget(form['subtitle']) }}{{ form_errors(form['subtitle']) }}
                     {% endblock %}
-                        </div>
-                    </div>
-                
-                <div class="form_row">
-                    <div class="form_field">
-                    {% block form_subtitle_mp3 %}
-                        {{ form_label(form['audio_mp3'], 'Audio File (mp3)') }}
+                </div>
+                                </div>
+        </fieldset>
+        {% endblock %}
+
+        {% block form_fieldset_Audio %}
+        <fieldset class="form_block form_fieldset_Audio">
+                <legend>{% trans from "Admin" %}Audio{% endtrans %}</legend>
+            <div class="form_row">
+                                                <div class="form_field">
+                    {% block form_audio_mp3_name %}
+                        {{ form_label(form['audio_mp3'], 'Audio file') }}
                         {{ form_widget(form['audio_mp3']) }}{{ form_errors(form['audio_mp3']) }}
                     {% endblock %}
-                    </div>                                            
                 </div>
-                
-                
-                    <div class="form_row">
-                        <div class="form_field">
+                    
+                {{ Podcast.audioMp3Name}}
+                                </div>
+        </fieldset>
+        {% endblock %}
+
+        {% block form_fieldset_Settings %}
+        <fieldset class="form_block form_fieldset_Settings">
+                <legend>{% trans from "Admin" %}Settings{% endtrans %}</legend>
+            <div class="form_row">
+                                                <div class="form_field">
                     {% block form_podcast_date %}
                         {{ form_label(form['podcast_date'], 'Podcast date') }}
 
                         {{ form_widget(form['podcast_date']) }}{{ form_errors(form['podcast_date']) }}
                     {% endblock %}
-                            </div>
-                        </div>
-                        <div class="form_row">
-                            <div class="form_field">
-                    {% block form_description %}
-                        {{ form_label(form['description'], 'Description') }}
-
-                        {{ form_widget(form['description']) }}{{ form_errors(form['description']) }}
-                    {% endblock %}
+                </div>
                                 </div>
-                            </div>
-                            <div class="form_row">
-                                <div class="form_field">
-                    {% block form_audio_url %}
-                        {{ form_label(form['audio_url'], 'Audio url') }}
-
-                        {{ form_widget(form['audio_url']) }}{{ form_errors(form['audio_url']) }}
-                    {% endblock %}
-                                    </div>
-                                </div>
-                                <div class="form_row">
-                                    <div class="form_field">
+            <div class="form_row">
+                                                <div class="form_field">
                     {% block form_active %}
                         {{ form_label(form['active'], 'Active') }}
 
                         {{ form_widget(form['active']) }}{{ form_errors(form['active']) }}
                     {% endblock %}
-                                        </div>
-                                    </div>
-                                </fieldset>
+                </div>
+                                </div>
+        </fieldset>
         {% endblock %}
 
-                                <ul class="actions">
-                                    <li>
+        <ul class="actions">
+            <li>
                  {{ form_rest(form) }}
-                                            <input type="submit" class="submit_button" value="{% trans from "Admingenerator" %}form.btn_save{% endtrans %}" />
-                                        </li>
-                                    </ul>
+                 <input type="submit" class="submit_button" value="{% trans from "Admingenerator" %}form.btn_save{% endtrans %}" />
+            </li>
+        </ul>
 
         {% block form_actions %}
-                                    <ul class="form_actions actions">
+         <ul class="form_actions actions">
+                  
+         <li><a class="list" href="{{ path("Mba_CautiousAdminBundle_Podcast_list") }}">{% trans from "Admingenerator" %}List{% endtrans %}</a></li>
 
-                                        <li><a class="list" href="{{ path("Mba_CautiousAdminBundle_Podcast_list") }}">{% trans from "Admingenerator" %}List{% endtrans %}</a></li>
-
-
-                                    </ul>
+          
+        </ul>
         {% endblock %}
 
-                                </form>
+    </form>
     {% endblock %}

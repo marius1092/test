@@ -1,14 +1,14 @@
 {% extends "MbaCautiousBundle::layout_new.html.twig" %}
+        
 {% block aside %}
 {% endblock %}  
 
 {% block content %}
 <section class="content content-wide">
     <div class="contact">
-				{{ page.content | raw}}
+        {{ page.content | raw}}
         </div><!-- contact -->
         <form action="http://cautiousfilms.us4.list-manage1.com/subscribe/post?u=f2972b0a4d6effcf4db1297e4&amp;id=4c0ab86f3f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate contact-form" target="_blank">
-
             <div class="row">
                 <input type="email"  name="EMAIL" class="required email" id="mce-EMAIL" value="Mailing List" onfocus="if(this.value=='Mailing List') this.value=''" onblur="if(this.value=='') this.value='Mailing List'">		<br>
                 <div id="mce-responses" class="clear">
@@ -16,19 +16,24 @@
                     <div class="response" id="mce-success-response" style="display:none"></div>
                 </div>	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>				
             </div><!-- row -->
-
         </form>
     </section>
+{% endblock %}
 
-{% endblock %}     
 {% block welcome %} 
     <section class="contact-data">
         <div class="vcard">
             <div class="tel">212-1CTFIMLS</div>
-            <a href="mailto:hello@cautiousfilms.com" class="email">hello@cautiousfilms.com</a>
+            {% if  globals['public-email-address'] is defined %}
+                <a href="mailto:{{globals['public-email-address']}}" class="email">{{globals['public-email-address']}}</a>
+            {% endif %}
         </div><!-- vcard -->
-        <a href="https://www.facebook.com/profile.php?id=100002430331134">http://facebook.com/dennis.shinners</a>
-        <a href="http://www.linkedin.com/pub/dennis-shinners/5/654/32b">http://linkedin.com/dennis.shinners</a>
+        {% if  globals['facebook-url'] is defined %}
+        <a href="{{globals['facebook-url']}}" target="_new">{{globals['facebook-url']}}</a>
+        {% endif %}
+        {% if  globals['linkedin-url'] is defined %}
+                <a href="{{globals['linkedin-url']}}" target="_new">{{globals['linkedin-url']}}</a>
+        {% endif %}                        
     </section><!-- contact-data -->
 {% endblock %} 
 

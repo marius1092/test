@@ -1,106 +1,109 @@
 {% extends_admingenerated "MbaCautiousAdminBundle:BackgroundEdit:index.html.twig" %}
-
-  {% block form %}
-<form
+ {% block form %}
+    <form
         {% if Background.id %}
-        action="{{ path("Mba_CautiousAdminBundle_Background_update", { 'id': Background.id }) }}"
+            action="{{ path("Mba_CautiousAdminBundle_Background_update", { 'id': Background.id }) }}"
         {% else %}
-        action="{{ path("Mba_CautiousAdminBundle_Background_create") }}"
+            action="{{ path("Mba_CautiousAdminBundle_Background_create") }}"
         {% endif %}
         method="post" {{ form_enctype(form) }}>
 
         {{ form_errors(form) }}
 
-        {% block form_fieldset_NONE %}
-        <fieldset class="form_block form_fieldset_NONE">
-                        
-                <div class="form_row">
-                    <div class="form_field">
+        {% block form_fieldset_Content %}
+        <fieldset class="form_block form_fieldset_Content">
+                <legend>{% trans from "Admin" %}Title{% endtrans %}</legend>
+            <div class="form_row">
+                                                <div class="form_field">
                     {% block form_title %}
                         {{ form_label(form['title'], 'Title') }}
 
                         {{ form_widget(form['title']) }}{{ form_errors(form['title']) }}
                     {% endblock %}
-                    </div>
                 </div>
-                
-                <div class="form_row">
-                    <div class="form_field">
-                    {% block form_image_poster %}
+                                </div>
+        </fieldset>
+        {% endblock %}
+
+        {% block form_fieldset_Image %}
+        <fieldset class="form_block form_fieldset_Image">
+                <legend>{% trans from "Admin" %}Background Image{% endtrans %}</legend>
+            <div class="form_row">
+                                                <div class="form_field">
+                    {% block form_image_name %}
+                        {{ form_label(form['image'], 'Background Image') }}
+
+                        {{ form_widget(form['image']) }}{{ form_errors(form['image']) }}
+                    {% endblock %}
+                                                    </div><br />
+                    <img src="{{ vich_uploader_asset(Background, 'image') | apply_filter('bg_thumb') }}" />                                                    
+                                </div>
+        </fieldset>
+        {% endblock %}
+
+        {% block form_fieldset_Video %}
+        <fieldset class="form_block form_fieldset_Video">
+                <legend>{% trans from "Admin" %}Video Background{% endtrans %}</legend>
+            <div class="form_row">
+                                                <div class="form_field">
+                    {% block form_poster_image_name %}
                         {{ form_label(form['poster_image'], 'Video Poster Image') }}
+
                         {{ form_widget(form['poster_image']) }}{{ form_errors(form['poster_image']) }}
-                    {% endblock %}                    
-                    </div>
-                    <br />
-                    <img src="{{ vich_uploader_asset(Background, 'poster_image') | apply_filter('bg_thumb') }}" alt="{{ Background.title }}" />
-                </div>
-            
-                <div class="form_row">
-                    <div class="form_field">
-                    {% block form_video_mp4 %}
-                        {{ form_label(form['video_mp4'], 'Video file mp4 format') }}
+                    {% endblock %}
+                </div><br /> 
+                <img src="{{ vich_uploader_asset(Background, 'poster_image') | apply_filter('bg_thumb') }}" />
+            </div>
+                
+            <div class="form_row">
+                <div class="form_field">
+                    {% block form_poster_image_name1 %}
+                        {{ form_label(form['video_mp4'], 'Video Mp4 format') }}
                         {{ form_widget(form['video_mp4']) }}{{ form_errors(form['video_mp4']) }}
-                    {% endblock %}
-                    </div>
-                    {% if Background.videoMp4Name %}                             
-                        <br />    
-                        {{Background.videoMp4Name}}
-                    {% endif %}                    
-                </div>
-            
-                <div class="form_row">
-                    <div class="form_field">
-                    {% block form_video_webm %}
-                        {{ form_label(form['video_webm'], 'Video file webm format') }}
-                        {{ form_widget(form['video_webm']) }}{{ form_errors(form['video_webm']) }}
-                    {% endblock %}
-                    </div>
-                    {% if Background.videoWebmName %}                                                     
-                        <br />
-                        {{Background.videoWebmName}}
-                    {% endif %}                    
-                </div>
-            
-                <div class="form_row">
-                    <div class="form_field">
-                    {% block form_video_ogg %}
-                        {{ form_label(form['video_ogg'], 'Video file Ogg format') }}
+                    {% endblock %}                        
+                    </div> <br />
+                    {% if Background.videoMp4Name | length > 0 %}{{ vich_uploader_asset(Background, 'video_mp4') }}{% endif %}
+            </div>
+                
+            <div class="form_row">
+                <div class="form_field">
+                    {% block form_poster_image_name2 %}
+                        {{ form_label(form['video_ogg'], 'Video Ogg format') }}
                         {{ form_widget(form['video_ogg']) }}{{ form_errors(form['video_ogg']) }}
                     {% endblock %}
-                    </div>
-                    {% if Background.videoOggName %}                             
-                        <br />    
-                        {{Background.videoOggName}}
-                    {% endif %}                    
                 </div>
-                                                
-                <div class="form_row">
-                    <div class="form_field">
-                    {% block form_image %}
-                        {{ form_label(form['image'], 'Background Image') }}
-                        {{ form_widget(form['image']) }}{{ form_errors(form['image']) }}
-                    {% endblock %}                    
-                    </div>
-                    <br />
-                    <img src="{{ vich_uploader_asset(Background, 'image') | apply_filter('bg_thumb') }}" alt="{{ Background.title }}" />
+                <br />{% if Background.videoOggName | length > 0 %}{{ vich_uploader_asset(Background, 'video_ogg') }}{% endif %}
+            </div>
+                
+            <div class="form_row">
+                <div class="form_field">
+                    {% block form_poster_image_name3 %}
+                        {{ form_label(form['video_webm'], 'Video Webm format') }}
+                        {{ form_widget(form['video_webm']) }}{{ form_errors(form['video_webm']) }}
+                    {% endblock %}
                 </div>
-                                
-            </fieldset>
+                <br />{% if Background.videoWebmName | length > 0 %}{{ vich_uploader_asset(Background, 'video_webm') }}{% endif %}
+            </div>                
+                
+                
+        </fieldset>
         {% endblock %}
 
-            <ul class="actions">
-                <li>
+        <ul class="actions">
+            <li>
                  {{ form_rest(form) }}
-                        <input type="submit" class="submit_button" value="{% trans from "Admingenerator" %}form.btn_save{% endtrans %}" />
-                    </li>
-                </ul>
+                 <input type="submit" class="submit_button" value="{% trans from "Admingenerator" %}form.btn_save{% endtrans %}" />
+            </li>
+        </ul>
 
         {% block form_actions %}
-                <ul class="form_actions actions">
+         <ul class="form_actions actions">
+                  
+         <li><a class="list" href="{{ path("Mba_CautiousAdminBundle_Background_list") }}">{% trans from "Admingenerator" %}List{% endtrans %}</a></li>
 
-                    <li><a class="list" href="{{ path("Mba_CautiousAdminBundle_Background_list") }}">{% trans from "Admingenerator" %}List{% endtrans %}</a></li>          
-                </ul>
+          
+        </ul>
         {% endblock %}
 
-            </form>
+    </form>
     {% endblock %}

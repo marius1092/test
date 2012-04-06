@@ -8,8 +8,8 @@ params:
 builders:
   list:
     params:
-      title: Promo work
-      display: [title, director, client, video_url,  promo_date, active]
+      title: Promos
+      display: [title, director, client, promo_date, active]
       actions:
         new: ~
       object_actions:
@@ -20,14 +20,20 @@ builders:
       display: []
   new:
     params:
-      title: New Promo Entry
-      display: [title, director, client, promo_date, description, video_url, active]
+      title: New Promo 
+      display: 
+        Content: [title, director, client, description]
+        Media: [video_url]
+        Settings: [active, promo_date]
       actions:
         list: ~
   edit:
     params:
-      title: Edit Promo Entry - "{{ Promo.title }}"
-      display: [title, director, client, promo_date, description, video_url, active]
+      title: Edit Promo - "{{ Promo.title }}"
+      display: 
+        Content: [title, director, client, description]
+        Media: [video_url]
+        Settings: [active, promo_date]
       actions:
         list: ~
   delete: ~

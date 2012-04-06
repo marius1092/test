@@ -8,8 +8,8 @@ params:
 builders:
   list:
     params:
-      title: Podcast
-      display: [title, audio_mp3_name, subtitle, podcast_date, audio_url, active]
+      title: Podcasts
+      display: [title, subtitle, podcast_date, active]
       actions:
         new: ~
       object_actions:
@@ -20,14 +20,18 @@ builders:
       display: []
   new:
     params:
-      title: New Podcast Entry      
-      display: [title, subtitle, podcast_date, description, active]
+      title: New Podcast
+      display: 
+        Content: [title, subtitle]        
+        Settings: [podcast_date, active]
       actions:
         list: ~
   edit:
     params:
       title: Edit Podcast - "{{ Podcast.title }}"
-      display: [title, subtitle, podcast_date, description, audio_url, active]
+      display: 
+        Content: [title, subtitle]
+        Settings: [podcast_date, active]      
       actions:
         list: ~
   delete: ~

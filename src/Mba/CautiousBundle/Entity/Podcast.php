@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Mba\CautiousBundle\Entity\Podcast
- *
+ * @Vich\Uploadable
  * @ORM\Table(name="podcast_work")
  * @ORM\Entity(repositoryClass="Mba\CautiousBundle\Entity\PodcastRepository")
  */
@@ -67,7 +67,7 @@ class Podcast
 
     /**
      * @Assert\File(
-     *     maxSize="5M",
+     *     maxSize="10M",
      *     mimeTypes={"audio/mpeg"}
      * )
      * @Vich\UploadableField(mapping="audioFile", fileNameProperty="audio_mp3_name")

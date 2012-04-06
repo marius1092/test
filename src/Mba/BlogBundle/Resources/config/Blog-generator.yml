@@ -21,13 +21,17 @@ builders:
   new:
     params:
       title: New News Entry
-      display: [title, subtitle, entry_date, content, active, meta_title, meta_description, meta_keywords]
+      display: 
+        Content: [title, subtitle, content]
+        Settings: [entry_date, active]        
       actions:
         list: ~
   edit:
     params:
       title: Edit - "{{ Blog.title }}"
-      display: [title, subtitle, entry_date, content, active, meta_title, meta_description, meta_keywords]
+      display: 
+        Content: [title, subtitle, content]
+        Settings: [entry_date, active]        
       actions:
         list: ~
   delete: ~

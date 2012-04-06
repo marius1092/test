@@ -14,7 +14,7 @@ class NewType extends BaseNewType
                 'toolbar' => array('document', 'clipboard', 'editing', '/', 'basicstyles', 'paragraph', 'links', '/', 'insert', 'styles', 'tools'),
                 'ui_colour' => '#fff',
                 'startup_outline_blocks' => false,
-                'width'    => '600',
+                'width'    => '800',
                 'height' => '400',
             ));
     }

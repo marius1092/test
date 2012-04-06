@@ -43,23 +43,30 @@ class AdminMenuBuilder extends ContainerAware
         $menu_entry = $menu->addChild('Podcast', array('route' => 'Mba_CautiousAdminBundle_Podcast_list'));
         $menu_entry->setLinkAttributes(array('class'=>'sub main'));
 
-        $menu_entry = $menu->addChild('Global Settings', array('route' => 'Mba_GlobalSettingsBundle_Gs_list'));
+        $menu_entry = $menu->addChild('Settings', array('route' => 'Mba_GlobalSettingsBundle_Gs_list'));
         $menu_entry->setLinkAttributes(array('class'=>'sub main'));
                 
-//        $test = $menu->addChild('ha ha', array('uri' => '#'));
-//        $test->setLinkAttributes(array('class'=>'sub main'));
-//        
-//        $help = $menu->addChild('Overwrite this menu', array('uri' => '#'));
-//        $help->setLinkAttributes(array('class'=>'sub main'));
-//
-//        $help->addChild('Configure menu class', array('uri' => 'https://github.com/knplabs/KnpMenuBundle/blob/master/Resources/doc/index.md'));
-//        $help->addChild('Configure php class to use', array('uri' => 'https://github.com/cedriclombardot/AdmingeneratorGeneratorBundle/blob/master/Resources/doc/change-the-menu-class.markdown'));                        
-//        $menu->addChild('About Me', array(
-//            'route' => 'page_show',
-//            'routeParameters' => array('id' => 42)
-//        ));
-        // ... add more children
-
+        if (!(strpos($this->container->get('request')->getRequestUri(), '/admin/pages') === false)) {
+            $menu['Pages']->setCurrent(true);
+        }        
+        if (!(strpos($this->container->get('request')->getRequestUri(), '/admin/background') === false)) {
+            $menu['Backgrounds']->setCurrent(true);
+        }
+        if (!(strpos($this->container->get('request')->getRequestUri(), '/admin/blog') === false)) {
+            $menu['News']->setCurrent(true);
+        }
+        if (!(strpos($this->container->get('request')->getRequestUri(), '/admin/promo') === false)) {
+            $menu['Promo Work']->setCurrent(true);
+        }
+        if (!(strpos($this->container->get('request')->getRequestUri(), '/admin/short') === false)) {
+            $menu['Short Film']->setCurrent(true);
+        }
+        if (!(strpos($this->container->get('request')->getRequestUri(), '/admin/podcast') === false)) {
+            $menu['Podcast']->setCurrent(true);
+        }
+        if (!(strpos($this->container->get('request')->getRequestUri(), '/admin/global') === false)) {
+            $menu['Settings']->setCurrent(true);
+        }        
         return $menu;
     }
 

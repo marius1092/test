@@ -79,7 +79,7 @@ class Page
     /**
      * @var string $meta_description
      *
-     * @ORM\Column(name="meta_description", type="string", length=200, nullable=true)
+     * @ORM\Column(name="meta_description", type="text", nullable=true)
      */
     private $meta_description;        
     
@@ -91,7 +91,7 @@ class Page
     private $meta_keywords;            
     
     /**
-     * @ORM\OneToOne(targetEntity="Mba\CautiousBundle\Entity\Background")
+     * @ORM\ManyToOne(targetEntity="Mba\CautiousBundle\Entity\Background")
      * @ORM\JoinColumn(name="background_id", referencedColumnName="id")
      */
     private $background;    
@@ -305,6 +305,8 @@ class Page
     {
         return $this->updated;
     }
+
+
 
     /**
      * Set background

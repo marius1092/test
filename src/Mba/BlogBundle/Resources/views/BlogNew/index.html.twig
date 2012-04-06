@@ -1,1 +1,5 @@
 {% extends_admingenerated "MbaBlogBundle:BlogNew:index.html.twig" %}
+
+{% block form_content %}        
+    {{ form_widget(form['content']) }}{{ form_errors(form['content']) }}
+{% endblock %}

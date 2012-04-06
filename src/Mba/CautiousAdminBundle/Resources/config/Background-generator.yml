@@ -8,8 +8,8 @@ params:
 builders:
   list:
     params:
-      title: List for CautiousAdminBundle
-      display: ~
+      title: Backgrounds
+      display: [title, image_name, poster_image_name, video_mp4_name, created]
       actions:
         new: ~
       object_actions:
@@ -17,17 +17,19 @@ builders:
         delete: ~
   filters:
     params:
-      display: ~
+      display: []
   new:
     params:
-      title: New object for CautiousAdminBundle
-      display: [title]
+      title: Create new Backgound
+      display: 
+        content: [title]
       actions:
         list: ~
   edit:
     params:
-      title: You're editing the object "{{ Background.title }}"
-      display: [title]
+      title: Edit Background - "{{ Background.title }}"
+      display:
+        content: [title]
       actions:
         list: ~
   delete: ~

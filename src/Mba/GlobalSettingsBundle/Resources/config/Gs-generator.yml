@@ -8,10 +8,9 @@ params:
 builders:
   list:
     params:
-      title: Global Settings List
-      display: ~
-      actions:
-        new: ~
+      title: Global Settings
+      display: [title, slug, value, created]
+      actions: []        
       object_actions:
         edit: ~
         delete: ~
@@ -26,8 +25,9 @@ builders:
         list: ~
   edit:
     params:
-      title: You're editing the object "{{ GlobalSetting.title }}"
-      display: [value]
+      title: Editing settings - "{{ GlobalSetting.title }}"
+      display: 
+        Content: [value]
       actions:
         list: ~
   delete: ~

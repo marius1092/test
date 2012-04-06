@@ -1,19 +1,5 @@
 {% extends "MbaCautiousBundle::layout_new.html.twig" %}
 
-{% block background %}
-    {% include "MbaCautiousBundle::background_image.html.twig" %}
-{% endblock %}
-
-{% block video %}
-    {% include "MbaCautiousBundle::background_video.html.twig" %}
-{% endblock %}
-
-{% if not page.Background.imageName %}
-    {% block play_button %}    
-        <a href="#" class="action pause" id="start_stop_btn"></a>
-    {% endblock%}
-{% endif %}
-
 {% block aside %}
 <aside class="left-side">
     <div class="promos">

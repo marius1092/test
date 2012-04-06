@@ -1,6 +1,3 @@
-{% if page.Background.imageName %}
+{% if page.Background.imageName is defined and page.Background.imageName | length > 0 %}
     <img id="bg" src="{{ vich_uploader_asset(page.Background, 'image') }}" alt="{{ page.Background.title }}" />    
 {% endif %}
-
-    
-

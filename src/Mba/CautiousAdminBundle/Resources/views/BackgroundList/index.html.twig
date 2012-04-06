@@ -1,1 +1,105 @@
 {% extends_admingenerated "MbaCautiousAdminBundle:BackgroundList:index.html.twig" %}
+
+{% block list_td_column_video_mp4_name %}
+    {{ Background.videoMp4Name }}<br />{{ Background.videoWebmName }}<br /> {{ Background.videoOggName }}
+{% endblock %}
+
+    
+            {% block list_thead %}
+        <thead>
+            <tr class="list_thead">
+
+                                <th class="list_thead_column{% if 1 %} sortable{% if sortColumn == 'title' and sortOrder == 'ASC' %} sorted-asc{% elseif sortColumn == 'title' and sortOrder == 'DESC' %} sorted-desc{% endif %}{% endif %}">
+                    {% if sortColumn == 'title' and sortOrder == 'ASC' %}
+                            <a href="?sort=title&order_by=desc">
+                        {% else %}
+                            <a href="?sort=title&order_by=asc">
+                        {% endif %}
+                                Title
+                    </a>
+                        {% if sortColumn == 'title' %}
+                            <span class="arrow
+                            {% if sortColumn == 'title' and sortOrder == 'ASC' %}
+                                order_asc
+                            {% else %}
+                                order_desc
+                            {% endif %}
+                            "> </span>
+                        {% endif %}
+                    </th>
+                                                <th class="list_thead_column{% if 1 %} sortable{% if sortColumn == 'image_name' and sortOrder == 'ASC' %} sorted-asc{% elseif sortColumn == 'image_name' and sortOrder == 'DESC' %} sorted-desc{% endif %}{% endif %}">
+                    {% if sortColumn == 'image_name' and sortOrder == 'ASC' %}
+                            <a href="?sort=image_name&order_by=desc">
+                        {% else %}
+                            <a href="?sort=image_name&order_by=asc">
+                        {% endif %}
+                                Backgound Image
+                    </a>
+                        {% if sortColumn == 'image_name' %}
+                            <span class="arrow
+                            {% if sortColumn == 'image_name' and sortOrder == 'ASC' %}
+                                order_asc
+                            {% else %}
+                                order_desc
+                            {% endif %}
+                            "> </span>
+                        {% endif %}
+                    </th>
+                                                <th class="list_thead_column{% if 1 %} sortable{% if sortColumn == 'poster_image_name' and sortOrder == 'ASC' %} sorted-asc{% elseif sortColumn == 'poster_image_name' and sortOrder == 'DESC' %} sorted-desc{% endif %}{% endif %}">
+                    {% if sortColumn == 'poster_image_name' and sortOrder == 'ASC' %}
+                            <a href="?sort=poster_image_name&order_by=desc">
+                        {% else %}
+                            <a href="?sort=poster_image_name&order_by=asc">
+                        {% endif %}
+                                Video Poster Image
+                    </a>
+                        {% if sortColumn == 'poster_image_name' %}
+                            <span class="arrow
+                            {% if sortColumn == 'poster_image_name' and sortOrder == 'ASC' %}
+                                order_asc
+                            {% else %}
+                                order_desc
+                            {% endif %}
+                            "> </span>
+                        {% endif %}
+                    </th>
+                                                <th class="list_thead_column{% if 1 %} sortable{% if sortColumn == 'video_mp4_name' and sortOrder == 'ASC' %} sorted-asc{% elseif sortColumn == 'video_mp4_name' and sortOrder == 'DESC' %} sorted-desc{% endif %}{% endif %}">
+                    {% if sortColumn == 'video_mp4_name' and sortOrder == 'ASC' %}
+                            <a href="?sort=video_mp4_name&order_by=desc">
+                        {% else %}
+                            <a href="?sort=video_mp4_name&order_by=asc">
+                        {% endif %}
+                                Video files
+                    </a>
+                        {% if sortColumn == 'video_mp4_name' %}
+                            <span class="arrow
+                            {% if sortColumn == 'video_mp4_name' and sortOrder == 'ASC' %}
+                                order_asc
+                            {% else %}
+                                order_desc
+                            {% endif %}
+                            "> </span>
+                        {% endif %}
+                    </th>
+                                                <th class="list_thead_column{% if 1 %} sortable{% if sortColumn == 'created' and sortOrder == 'ASC' %} sorted-asc{% elseif sortColumn == 'created' and sortOrder == 'DESC' %} sorted-desc{% endif %}{% endif %}">
+                    {% if sortColumn == 'created' and sortOrder == 'ASC' %}
+                            <a href="?sort=created&order_by=desc">
+                        {% else %}
+                            <a href="?sort=created&order_by=asc">
+                        {% endif %}
+                                Created
+                    </a>
+                        {% if sortColumn == 'created' %}
+                            <span class="arrow
+                            {% if sortColumn == 'created' and sortOrder == 'ASC' %}
+                                order_asc
+                            {% else %}
+                                order_desc
+                            {% endif %}
+                            "> </span>
+                        {% endif %}
+                    </th>
+                                <th class="actions">{% trans from "Admingenerator" %}list.actions{% endtrans %}</th>
+                </tr>
+        </thead>
+{% endblock %}    

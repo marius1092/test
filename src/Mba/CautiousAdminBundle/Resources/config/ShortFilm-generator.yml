@@ -9,7 +9,7 @@ builders:
   list:
     params:
       title: Short Film
-      display: [title, director, client, video_url,  short_film_date, active]
+      display: [title, director, client, short_film_date, active]      
       actions:
         new: ~
       object_actions:
@@ -20,14 +20,20 @@ builders:
       display: []
   new:
     params:
-      title: New object for CautiousAdminBundle
-      display: [title, director, client, short_film_date, description, video_url, active]
+      title: New Short Film
+      display: 
+        Content: [title, director, client, description]
+        Media: [video_url]
+        Settings: [active, short_film_date]      
       actions:
         list: ~
   edit:
     params:      
       title: Edit Short Film Entry - "{{ ShortFilm.title }}"
-      display: [title, director, client, short_film_date, description, video_url, active]
+      display: 
+        Content: [title, director, client, description]
+        Media: [video_url]
+        Settings: [active, short_film_date]      
       actions:
         list: ~
   delete: ~

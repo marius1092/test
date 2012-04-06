@@ -11,8 +11,9 @@
 
         {{ form_errors(form) }}
 
-        {% block form_fieldset_NONE %}
-        <fieldset class="form_block form_fieldset_NONE">
+        {% block form_fieldset_Content %}
+        <fieldset class="form_block form_fieldset_Content">
+                <legend>{% trans from "Admin" %}Title{% endtrans %}</legend>
             <div class="form_row">
                                                 <div class="form_field">
                     {% block form_title %}
@@ -22,6 +23,65 @@
                     {% endblock %}
                 </div>
                                 </div>
+        </fieldset>
+        {% endblock %}
+
+        {% block form_fieldset_Image %}
+        <fieldset class="form_block form_fieldset_Image">
+                <legend>{% trans from "Admin" %}Background Image{% endtrans %}</legend>
+            <div class="form_row">
+                                                <div class="form_field">
+                    {% block form_image %}
+                        {{ form_label(form['image'], 'Background Image') }}
+                        {{ form_widget(form['image']) }}{{ form_errors(form['image']) }}
+                    {% endblock %}
+                                                </div> <br />
+
+                                                    
+                                </div>
+        </fieldset>
+        {% endblock %}
+
+        {% block form_fieldset_Video %}
+        <fieldset class="form_block form_fieldset_Video">
+                <legend>{% trans from "Admin" %}video{% endtrans %}</legend>
+            <div class="form_row">
+                <div class="form_field">
+                    {% block form_poster_image_name %}
+                        {{ form_label(form['poster_image'], 'Video Poster Image') }}
+
+                        {{ form_widget(form['poster_image']) }}{{ form_errors(form['poster_image']) }}
+                    {% endblock %}
+                </div>
+            </div>
+
+            <div class="form_row">
+                <div class="form_field">
+                    {% block form_poster_image_name1 %}
+                        {{ form_label(form['video_mp4'], 'Video Mp4 format') }}
+                        {{ form_widget(form['video_mp4']) }}{{ form_errors(form['video_mp4']) }}
+                    {% endblock %}
+                </div>
+            </div>
+                
+            <div class="form_row">
+                <div class="form_field">
+                    {% block form_poster_image_name2 %}
+                        {{ form_label(form['video_ogg'], 'Video Ogg format') }}
+                        {{ form_widget(form['video_ogg']) }}{{ form_errors(form['video_ogg']) }}
+                    {% endblock %}
+                </div>
+            </div>
+                
+            <div class="form_row">
+                <div class="form_field">
+                    {% block form_poster_image_name3 %}
+                        {{ form_label(form['video_webm'], 'Video Webm format') }}
+                        {{ form_widget(form['video_webm']) }}{{ form_errors(form['video_webm']) }}
+                    {% endblock %}
+                </div>
+            </div>
+                
         </fieldset>
         {% endblock %}
 
@@ -43,3 +103,4 @@
 
     </form>
     {% endblock %}
+

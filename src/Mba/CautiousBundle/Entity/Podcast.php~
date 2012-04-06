@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Mba\CautiousBundle\Entity\Podcast
- *
+ * @Vich\Uploadable
  * @ORM\Table(name="podcast_work")
  * @ORM\Entity(repositoryClass="Mba\CautiousBundle\Entity\PodcastRepository")
  */
@@ -67,7 +67,7 @@ class Podcast
 
     /**
      * @Assert\File(
-     *     maxSize="5M",
+     *     maxSize="10M",
      *     mimeTypes={"audio/mpeg"}
      * )
      * @Vich\UploadableField(mapping="audioFile", fileNameProperty="audio_mp3_name")
@@ -284,5 +284,45 @@ class Podcast
     public function getAudioMp3Name()
     {
         return $this->audio_mp3_name;
+    }
+
+    /**
+     * Set created
+     *
+     * @param date $created
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+    }
+
+    /**
+     * Get created
+     *
+     * @return date 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param date $updated
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return date 
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
     }
 }

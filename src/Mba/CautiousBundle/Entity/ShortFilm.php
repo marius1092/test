@@ -69,7 +69,7 @@ class ShortFilm {
     /**
      * @var string $video_url
      *
-     * @ORM\Column(name="video_url", type="string", length=255)
+     * @ORM\Column(name="video_url", type="text")
      */
     private $video_url;
 

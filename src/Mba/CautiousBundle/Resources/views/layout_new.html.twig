@@ -6,7 +6,11 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>{% block title %}Cautious films{% endblock %}</title>          <meta name="description" content="Cautious Films">
+  
+  <title>Cautious films {{ (page.metaTitle is defined) ? ' - ' ~ page.metaTitle : ''}}</title>          
+  <meta name="description" content="{{ (page.metaDescription is defined) ? page.metaDescription : 'Cautious Films'}}">  
+  <meta name="keywords" content="{{ (page.metaKeywords is defined) ? page.metaKeywords : 'Cautious Films'}}">    
+  
   <meta name="author" content="humans.txt">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="/css/style.css">
@@ -16,8 +20,8 @@
 </head>
 
 <body>
-    {% block background %}
-       <!--  <img src="/uploads/bg/bg_1.jpg" id="bg" alt=""> -->
+    {% block background %}        
+        {% include "MbaCautiousBundle::background_image.html.twig" %}        
     {% endblock %}
 <div class="nonfooter">    
     <header>
@@ -36,25 +40,21 @@
     		</div><!-- wrapper -->
     </div><!-- container -->
     <div id="bg_grid"></div>
-    {% block video %}
-       <!-- 
-        <video id="index_video" class="video-js vjs-default-skin" controls preload="auto" width="100%" height="100%" poster="/video/stills/tunnel.jpg" data-setup='{ "controls": false, "autoplay": true, "preload": "auto", "loop": true }'>
-            <source src="/video/city.mp4" type='video/mp4'>
-            <source src="/video/city.webm" type='video/webm'>
-            <source src="/video/city.ogv" type='video/ogg'>
-        </video>    -->
+    {% block video %}        
+        {% include "MbaCautiousBundle::background_video.html.twig" %}        
     {% endblock %}
 </div><!-- nonfooter -->
 <footer>
 	<div class="wrapper">
-		<div class="copyright">
+		<div class="copyright">                    
 			copyright &#169; 2012 cautious films
 		</div>
 		<div class="music">
                         <a href="#" class="" id="start_stop_sound"></a>
-                        {% block play_button %}
+                        {% if page.Background.imageName is not defined or page.Background.imageName | length == 0 %}
                             <a href="#" class="action pause" id="start_stop_btn"></a>
-                        {% endblock %}
+                        {% endif %}
+                        
 		</div>
 	</div>
 </footer><!-- footer -->
@@ -65,12 +65,14 @@
 <script defer src="/js/plugins.js"></script>
 <script defer src="/js/script.js"></script>
 {% block extra_js %}{% endblock %}
+{% if globals['google-analytics'] is defined %}
 <script>
-window._gaq = [['_setAccount','UA-8070376-4'],['_trackPageview'],['_trackPageLoadTime']];
+window._gaq = [['_setAccount','{{ (globals['google-analytics'] is defined) ? globals['google-analytics'] : 'UA-8070376-4'}}'],['_trackPageview'],['_trackPageLoadTime']];
 Modernizr.load({
   load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
 });
 </script>
+{% endif %}
 
 <!--[if lte IE 7 ]>
 <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>

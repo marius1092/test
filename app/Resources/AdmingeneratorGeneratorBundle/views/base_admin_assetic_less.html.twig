@@ -18,50 +18,54 @@
     </head>
     <body>
         <div id="header">
-            {% block header %}
-                <div id="header-left">
-                    {% block logo %}
-                    <div class="logo">                   
-                        <a href="{{ path('mba_dashboard_default_index') }}"><img src="/img/pic-logo.png" title="Cautious Films Admin" /></a>
-                    </div>
+            <div class="container">
+                {% block header %}
+                    <div id="header-left">
+                        {% block logo %}
+                        <div class="logo">                   
+                            <a href="{{ path('mba_dashboard_default_index') }}"><img src="/img/pic-logo.png" title="Cautious Films Admin" /></a>
+                        </div>
+                        {% endblock %}
+                    </div>  
+                    <div id="header-right">                        
+                        {% block profile %}
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <div class="profile">
+                            <ul>
+                                <li class="header-text">
+                                    Welcome {{app.user.username}}
+                                </li>
+                                <li>
+                                    <a class='logout' href="{{ path('fos_user_security_logout') }}">Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                            {% endif %}
+                        {% endblock %}                
+                    {% block menu %}
+                         {{ knp_menu_render('MbaDashboardBundle:AdminMenuBuilder:adminMenu') }}
                     {% endblock %}
-                </div>  
-                <div id="header-right">                        
-                    {% block profile %}
-                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                    <div class="profile">
-                        <ul>
-                            <li class="header-text">
-                                Welcome {{app.user.username}}
-                            </li>
-                            <li>
-                                <a class='logout' href="{{ path('fos_user_security_logout') }}">Logout</a>
-                            </li>
-                        </ul>
-                    </div>
-                        {% endif %}
-                    {% endblock %}                
-                {% block menu %}
-                     {{ knp_menu_render('MbaDashboardBundle:AdminMenuBuilder:adminMenu') }}
+                    </div>        
                 {% endblock %}
-                </div>        
-            {% endblock %}
+             </div>       
         </div>
         <div id="content">
-            {% block flashes %}
-                {% if app.session.flash('success') %}
-                    <div class="notification_box success">
-                        {{ app.session.flash('success')|raw }}
-                    </div>
-                {% endif %}
-                {% if app.session.flash('error') %}
-                    <div class="notification_box error">
-                        {{ app.session.flash('error')|raw }}
-                    </div>
-                {% endif %}
-            {% endblock %}
+            <div class="container">
+                {% block flashes %}
+                    {% if app.session.flash('success') %}
+                        <div class="notification_box success">
+                            {{ app.session.flash('success')|raw }}
+                        </div>
+                    {% endif %}
+                    {% if app.session.flash('error') %}
+                        <div class="notification_box error">
+                            {{ app.session.flash('error')|raw }}
+                        </div>
+                    {% endif %}
+                {% endblock %}
 
-            {% block body %}{% endblock %}
+                {% block body %}{% endblock %}
+            </div>
         </div>
         {% block javascripts %}
             <script type="text/javascript" src="{{ asset('bundles/admingeneratorgenerator/javascripts/menu.js') }}"></script>
