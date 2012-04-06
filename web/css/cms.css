@@ -112,3 +112,8 @@ div.form_row div.form_field input { width: 500px;}
 ul.actions li a.list {    
     padding: 0px;    
 }
+#username,
+#password,
+#remember_me { 
+    width: 150px;
+}
