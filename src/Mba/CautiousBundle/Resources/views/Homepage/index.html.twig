@@ -1,5 +1,9 @@
 {% extends "MbaCautiousBundle::layout_new.html.twig" %}
 
+{% block body %}
+    <body id="homepage">
+{%endblock%}
+            
 {% block welcome %} 
 <section id="welcome">
     {% autoescape false %}{{ page.content }}{% endautoescape %}    

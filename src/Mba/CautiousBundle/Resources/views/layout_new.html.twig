@@ -19,7 +19,9 @@
   {% block stylesheets %}{% endblock %}    
 </head>
 
-<body>
+{% block body %}
+    <body>
+{%endblock%}
     {% block background %}        
         {% include "MbaCautiousBundle::background_image.html.twig" %}        
     {% endblock %}
