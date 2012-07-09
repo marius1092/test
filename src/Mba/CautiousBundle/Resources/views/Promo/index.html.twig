@@ -13,7 +13,7 @@
                         <div class="over">
                             <span class="title">{{ promo.title }}</span>
                             <span class="author">director: {{ promo.director }}</span>
-                            <span class="date">{{ promo.promoDate | date("F Y") }}</span>
+                            <!--<span class="date">{{ promo.promoDate | date("F Y") }}</span>-->
                         </div>                                                                
                     </a>
                 </li>                                                                       
@@ -46,7 +46,7 @@
                     <div class="details">
                         {% if promo.director %}<em>DIRECTOR:</em> {{ promo.director }}<br />{% endif %}
                         {% if promo.client %} <em>CLIENT:</em> {{ promo.client }}<br />{% endif %}
-                            <em>DATE:</em> {{ promo.promoDate | date("F Y") }} <br />
+                           <!-- <em>DATE:</em> {{ promo.promoDate | date("F Y") }} <br />-->
                         </div><!-- details -->
                     {{ promo.description | raw }}
                     </aside><!-- meta -->

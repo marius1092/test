@@ -3,3 +3,5 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ app.php [QSA,L]
 </IfModule>
+#php_value upload_max_filesize 110M
+#php_value post_max_size 300M

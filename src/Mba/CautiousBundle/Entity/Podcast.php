@@ -67,8 +67,8 @@ class Podcast
 
     /**
      * @Assert\File(
-     *     maxSize="10M",
-     *     mimeTypes={"audio/mpeg", "application/octet-stream"}
+     *     maxSize="300M",
+     *     mimeTypes={"audio/mpeg", "application/octet-stream", "audio/mp4"}
      * )
      * @Vich\UploadableField(mapping="audioFile", fileNameProperty="audio_mp3_name")
      *

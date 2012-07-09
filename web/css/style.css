@@ -1,3 +1,4 @@
+/* @override http://dev.cautiousfilms.com/css/style.css */
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
 audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
@@ -7,7 +8,8 @@ audio:not([controls]) { display: none; }
 
 html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
 
-body { margin: 0; font-size: 13px; line-height: 1.231; }
+body { margin: 0; font-size: 13px; line-height: 1.231; text-shadow: 1px 1px 1px #000;
+filter: dropshadow(color=#000, offx=1, offy=1);}
 
 body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
@@ -82,7 +84,7 @@ input:-moz-ui-invalid { border: 0; outline: none; box-shadow: none; -moz-box-sha
 /* Containers */
 html { height: 100%; -webkit-font-smoothing: antialiased;}
 body { background-color: #000; color: #fff; height: 100%; }
-.wrapper { margin: 0 auto; width: 1216px; }
+.wrapper { margin: 0 auto; width: 900px; }
 .nonfooter { position: relative; min-height: 100%; overflow: hidden;
 }
 
@@ -97,7 +99,7 @@ header {
     z-index: 1;
 }
 header .logo,
-header .logo:visited { display: block; float: left; margin: 104px 0 0 776px; }
+header .logo:visited { display: block; float: left; margin: 104px 0 0 460px; }
 header .logo img { display: block; }
 
 /* nav */
@@ -123,7 +125,8 @@ nav .current a:visited { color: #c8a11c; }
 .container .wrapper { padding: 36px 0 155px; overflow: hidden; position: relative; }
 
 /* backgrounds */
-#bg { position: fixed; top: 0; left: 0; }
+#bg { position: fixed; top: 0; left: 0; height: 100%;
+}
 .bgwidth { width: 100%; }
 .bgheight { height: 100%; }
 
@@ -142,12 +145,11 @@ nav .current a:visited { color: #c8a11c; }
     width: 100%;
 }
 #bg_grid {
-    border: 1px solid pink;
     background-image: url(../img/bg_grid.png);
 }
-#contact_video, #podcast_video, #index_video {
+/*#contact_video, #podcast_video, #index_video {
     z-index: -2;
-}
+}*/
 
 /* footer */
 footer { width: 100%; background: url(../img/bgr-footer.png) repeat-x bottom; position: relative; margin: -40px 0 0; overflow: hidden; height: 40px; z-index:1;}
@@ -198,7 +200,7 @@ font: 12px/12px 'QuattrocentoSansRegular', sans-serif;
 .left-side { float: left; width: 214px; }
 
 /* content */
-.content { width: 506px; float: left; margin: 0 0 0 62px; }
+.content { width: 506px; float: left;  }
 
 
 /* index styles
@@ -223,7 +225,7 @@ font: 12px/12px 'QuattrocentoSansRegular', sans-serif;
 
 .promos li a,
 .promos li a:visited { 
-    display: block; width: 210px; height: 110px; 
+    display: block; width: 180px; height: 92px; 
     text-decoration: none;
     
 }
@@ -232,15 +234,15 @@ font: 12px/12px 'QuattrocentoSansRegular', sans-serif;
     position: absolute;
     top: 0;
     left: 0;
-    width: 210px; height: 110px;
+    width: 180px; height: 92px;
     border: 1px solid #000;
     z-index: 1;
 }
 .promos li .play { 
     display: block; 
     position: absolute;
-    top: 28px;
-    left: 78px;
+    top: 20px;
+    left: 68px;
     z-index: 2;
 }
 
@@ -251,7 +253,7 @@ font: 12px/12px 'QuattrocentoSansRegular', sans-serif;
     position: absolute;
     top: 0;
     left: 0;
-    width: 190px; height: 90px;
+    width: 161px; height: 72px;
     padding: 10px;
     z-index: 3;
     display: none;
@@ -259,19 +261,22 @@ font: 12px/12px 'QuattrocentoSansRegular', sans-serif;
 .promos li .title {
     color: #000;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 14px;
     display: block;
 }
 .promos li .author {
     color: #000;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 12px;
     display: block;
 }
 .promos li .date {
     color: #000;
     font-weight: normal;
-    font-size: 14px;
+    font-size: 12px;
+}
+.promos li *, .promos .nav * {
+	text-shadow: none;
 }
 .promos li a:hover div {
     display: block;
@@ -280,7 +285,7 @@ font: 12px/12px 'QuattrocentoSansRegular', sans-serif;
     display: none;
 }
 
-.promos .nav { width: 210px; overflow: hidden; margin: 33px 0 0; }
+.promos .nav { width: 180px; overflow: hidden; margin: 13px 0 0; }
 .promos .nav .prev,
 .promos .nav .prev:visited { display: block; float: left; color: #6f6f6f; font-size: 16px; text-decoration: none; width: 88px; line-height: 21px; vertical-align: middle; text-indent: 20px; background-color: #141313; }
 .promos .nav .next,
@@ -300,6 +305,7 @@ font: 12px/12px 'QuattrocentoSansRegular', sans-serif;
 .promo .details { margin: 0 0 26px; }
 .promo h2 { font-size: 29px; line-height: normal; padding: 0; margin: 20px 0 0; font-weight: normal; }
 .promo em { text-transform: uppercase; font-style: normal; font-weight: bold; }
+
 .promo p { padding: 0; margin: 0; }
 
 /* Podcast styles
@@ -316,7 +322,11 @@ font: 12px/12px 'QuattrocentoSansRegular', sans-serif;
 .archive .current a { color: #c8a11c !important; }
 
 /* podcast */
-.podcast { font-family: 'QuattrocentoSansRegular', sans-serif; }
+.podcast { 
+	font-family: 'QuattrocentoSansRegular', sans-serif; 
+	width: 500px;
+
+}
 .podcast h2 { font-size: 29px; font-weight: normal; padding: 0; margin: 0; text-shadow: 0 1px 1px #404040; }
 .podcast h3 { font-size: 15px; line-height: 26px; padding: 0; margin: 0; font-weight: normal; text-shadow: 0 1px 1px #404040; }
 .podcast .date { font-size: 15px; line-height: 26px; text-shadow: 0 1px 1px #404040; }
@@ -330,7 +340,7 @@ font: 12px/12px 'QuattrocentoSansRegular', sans-serif;
 .playlist li {
     margin: 0 0 30px 0;
 }
-.podcasts { font-family: 'QuattrocentoSansRegular', sans-serif; margin: 22px 0 0; }
+.podcasts { font-family: 'QuattrocentoSansRegular', sans-serif; }
 .podcasts .item { width: 100%; margin: 43px 0 0; }
 .podcasts h4 { padding: 0; margin: 0; font-weight: normal; text-shadow: 0 1px 1px #404040; font-size: 29px; }
 .podcasts h5 { padding: 0; margin: 0; font-weight: normal; text-shadow: 0 1px 1px #404040; font-size: 15px; line-height: 26px; }
